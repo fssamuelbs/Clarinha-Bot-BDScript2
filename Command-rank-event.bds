@@ -1,0 +1,25 @@
+$nomention 
+$suppressErrors 
+$var[din;morcegos] $var[nome;Morcegos]
+$var[icon;🦇] $var[link;$getBotInvite] $var[1;🏆] $var[2;🥈] $var[3;🥉] $var[pos;🎖️] $var[vtipo;globalUser]
+
+$title[Evento Halloween - Ranking]
+$description[$optOff[$if[$getLeaderboardValue[$var[vtipo];$var[din];asc;1;id]==]$else
+$var[1] 1. [$username[$getLeaderboardValue[$var[vtipo];$var[din];asc;1;id]]\]($var[link]): **$getLeaderboardValue[$var[vtipo];$var[din];asc;1;value] $var[nome]**$endif$if[$getLeaderboardValue[$var[vtipo];$var[din];asc;2;id]==]$else
+$var[2] 2. [$username[$getLeaderboardValue[$var[vtipo];$var[din];asc;2;id]]\]($var[link]): **$getLeaderboardValue[$var[vtipo];$var[din];asc;2;value] $var[nome]**$endif$if[$getLeaderboardValue[$var[vtipo];$var[din];asc;3;id]==]$else
+$var[3] 3. [$username[$getLeaderboardValue[$var[vtipo];$var[din];asc;3;id]]\]($var[link]): **$getLeaderboardValue[$var[vtipo];$var[din];asc;3;value] $var[nome]**$endif$if[$getLeaderboardValue[$var[vtipo];$var[din];asc;4;id]==]$else
+$var[pos] 4. [$username[$getLeaderboardValue[$var[vtipo];$var[din];asc;4;id]]\]($var[link]): **$getLeaderboardValue[$var[vtipo];$var[din];asc;4;value] $var[nome]**$endif$if[$getLeaderboardValue[$var[vtipo];$var[din];asc;5;id]==]$else
+$var[pos] 5. [$username[$getLeaderboardValue[$var[vtipo];$var[din];asc;5;id]]\]($var[link]): **$getLeaderboardValue[$var[vtipo];$var[din];asc;5;value] $var[nome]**$endif$if[$getLeaderboardValue[$var[vtipo];$var[din];asc;6;id]==]$else
+$var[pos] 6. [$username[$getLeaderboardValue[$var[vtipo];$var[din];asc;6;id]]\]($var[link]): **$getLeaderboardValue[$var[vtipo];$var[din];asc;6;value] $var[nome]**$endif$if[$getLeaderboardValue[$var[vtipo];$var[din];asc;7;id]==]$else
+$var[pos] 7. [$username[$getLeaderboardValue[$var[vtipo];$var[din];asc;7;id]]\]($var[link]): **$getLeaderboardValue[$var[vtipo];$var[din];asc;7;value] $var[nome]**$endif$if[$getLeaderboardValue[$var[vtipo];$var[din];asc;8;id]==]$else
+$var[pos] 8. [$username[$getLeaderboardValue[$var[vtipo];$var[din];asc;8;id]]\]($var[link]): **$getLeaderboardValue[$var[vtipo];$var[din];asc;8;value] $var[nome]**$endif$if[$getLeaderboardValue[$var[vtipo];$var[din];asc;9;id]==]$else
+$var[pos] 9. [$username[$getLeaderboardValue[$var[vtipo];$var[din];asc;9;id]]\]($var[link]): **$getLeaderboardValue[$var[vtipo];$var[din];asc;9;value] $var[nome]**$endif$if[$getLeaderboardValue[$var[vtipo];$var[din];asc;10;id]==]$else
+$var[pos] 10. [$username[$getLeaderboardValue[$var[vtipo];$var[din];asc;10;id]]\]($var[link]): **$getLeaderboardValue[$var[vtipo];$var[din];asc;10;value] $var[nome]**$endif]]
+$color[#000000]
+$thumbnail[$userAvatar[$botID]]
+$endif
+
+
+
+
+### O COMANDO GERA O RANK DO EVENTO. / UTILIZAR BDS2
