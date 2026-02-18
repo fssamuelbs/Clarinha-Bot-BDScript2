@@ -1,0 +1,15 @@
+### No prefixo do comenado, coloque $onInteraction[presente], e logo após o código:
+
+$nomention
+$removeButtons
+
+$var[spam;1]
+$title[🦇 | Morcego Coletado!]
+$description[<:orange_abobora_CDN:1168743764416811078> **|** O morcego foi coletado por <@$authorID>, e ganhou $var[spam] Morcego!
+Veja as 10 pessoas com mais morcegos usando /rank!]
+
+$setVar[morcegos;$sum[$getVar[morcegos;$authorID];$var[spam]];$authorID]
+$color[#000000]
+$addButton[no;button;Morcego Coletado!;secondary;yes;🦇]
+   
+$thumbnail[$userAvatar[$botID]]
