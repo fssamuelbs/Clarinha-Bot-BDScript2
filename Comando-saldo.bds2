@@ -1,0 +1,31 @@
+$nomention 
+$suppressErrors 
+$onlyIf[$guildID!=;]
+$onlyIf[$checkContains[$toLowercase[$message[1]];atm;saldo;coins;carteira]==true;]
+$setVar[comandosusados;$sum[$getVar[comandosusados];1]]
+$onlyIf[$getVar[Registrado;$authorID]>1;<:fx_uncertification:1123653285451153508> **|** Epa <@$authorID>! Esse é seu primeiro contato comigo, para começar a se divertir comigo você deve se registrar, para isso use ``/registrar`` ou ``cl.registrar``.]
+
+$reply 
+$onlyIf[$guildID!=;]
+
+$var[name;CandyMoneyPrincipal]
+$var[type;globalUser]
+$var[user;$findUser[$optOff[$unescape[$message[1;user]]]]]
+
+$async[position]$trimSpace[$var[position;0]
+$eval[$repeatMessage[8;$repeatMessage[10;%{DOL}%var[position\;%{DOL}%sum[%{DOL}%var[position\]\;1\]\]
+%{DOL}%if[%{DOL}%getLeaderboardValue[%{DOL}%var[type\]\;%{DOL}%var[name\]\;asc\;%{DOL}%var[position\]\;id\]==%{DOL}%var[user\]\]
+%{DOL}%var[position\]
+%{DOL}%endif]]]]$endasync
+$var[position;$await[position]]
+$async[ordinal]$trimSpace[]
+$endasync
+$var[position;$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$await[position];1;1];2;2];3;3];11;11];12;12];13;13]]
+
+$if[$authorID==$var[user]]
+**<:candyland:1167435146107027626> |** Olá <@$authorID>! Você possui **<:candy:1167434080489574441> $numberSeparator[$getVar[$var[name];$authorID]] Candys ** em sua carteira! Você ocupa a colocação **#$if[$await[position]!=]$optOff[$var[position]]$else99+$endif** no ranking, veja os outros amantes de doce usando ``/candy-rank``!
+$else
+**<:candyland:1167435146107027626> |** <@$authorID>, <@$var[user]> possui **<:candy:1167434080489574441> $numberSeparator[$getVar[$var[name];$var[user]]] Candys** na carteira! <@$var[user]> ocupa a colocação **#$if[$await[position]!=]$optOff[$var[position]]$else99+$endif no ranking**, veja o outros amantes de doce usando ``/candy-rank``!
+$endif
+
+$ignoreTriggerCase 
