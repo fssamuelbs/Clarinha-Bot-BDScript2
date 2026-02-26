@@ -1,0 +1,43 @@
+$nomention
+$suppressErrors 
+$onlyIf[$guildID!=;]
+
+$onlyIf[$getVar[Registrado;$authorID]>1;<:fx_uncertification:1123653285451153508> **|** Epa <@$authorID>! Esse é seu primeiro contato comigo, para começar a se divertir comigo você deve se registrar, para isso use ``/registrar`` ou ``cl.registrar``.]
+
+
+$reply
+
+**<:sorte:1125599515408343070> | Clarifa**
+
+> <:Claramoney:1080287327412293692> **|** Preço de cada ticket: `100 Candys`
+> <:PresenteNatal:1080519439994339399> **|** Prêmio atual: `$numberSeparator[$getVar[rifavalor]] Candys `
+> <:z_ticketpng:1080517911044702320> **|** Tickets comprados: `$numberSeparator[$getVar[rifaticket]] Tickets`
+> <:Nitro:1080520038504734780> **|** Último ganhador: `$getVar[rifaganhador] ($numberSeparator[$getVar[rifavalorpass]] Candys)`
+
+<a:faq:1080605753829756978> **| _"Como a rifa funciona?":_** _o usuário compra seus tickets e eles são acumulados no valor da rifa até algum usuário levar seu prêmio, a rifa não tem um tempo de término, ela só acaba quando algum usuário ganha!_
+<:z_ticketpng:1080517911044702320> **|** Para comprar um ticket, digite ``/rifa-comprar``.
+
+$reply
+
+$ignoreTriggerCase
+
+$setVar[command;$sum[$getVar[command;$authorID];1];$authorID]
+
+$onlyIf[$guildID!=;]
+
+$cooldown[5s;<:check_no:1076914196500975706>︰Calma, você deve aguardar %time% para usar o comando novamente.]
+
+$ignoreTriggerCase
+
+$channelSendMessage[1137142368139743382;
+**<:jslogo:1137073414184636548> | Comando usado via Slash**
+- **Autor:**
+`` $username ($authorID)``
+- **Comando:** 
+``/rifa``
+- **Servidor:** 
+``$serverName[$guildID] ($guildID)``
+- **Executado no Canal:** 
+``$channelName[$channelID] ($channelID) ``
+- **Horário:**
+<t:$getTimestamp:D>]
