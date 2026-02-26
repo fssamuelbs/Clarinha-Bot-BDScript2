@@ -1,0 +1,134 @@
+ $onlyIf[$getVar[CandyMoneyPrincipal;$authorID]>4999;<:fx_uncertification:1123653285451153508> **|** <@$authorID> Para cometer um crime você deve ter pelo menos  **5.000 Candys!**]
+  $globalCooldown[900s;⏰️ **|** <@$authorID>, você já trabalhou nos últimos 15 minutos, retorne <t:$sum[$getTimestamp;$getCooldown[global]]:R>.]
+   $setVar[comandosusados;$sum[$getVar[comandosusados];1]]
+    $var[thumbnail;https://media.discordapp.net/attachments/1128889845134139404/1186625120832344116/20231219_080422_0000.png?ex=6593edc3&is=658178c3&hm=d2a8e038d431fc5a38ba280917a339bec63283ef3667e6470893fd6ae6e8ab5a&]
+     $var[cor;#8d1aad]
+      $reply 
+       $suppressErrors 
+ $if[$randomText[a;b;c;d;e;f;g;h;i]==a]
+ $color[$var[cor]]
+ $nomention 
+ $reply 
+ $title[🥩 | Você trabalhou como Açougueiro!]
+ $description[<:newverified:1185777501159555164> **|** <@$authorID>, você conseguiu um emprego de **Açougueiro** no **Supermercado Assaí,** e recebeu um salário de **🍬$random[50;3000] Candys!** Parabéns pelo ótimo trabalho, agora descanse...]
+ $thumbnail[$var[thumbnail]]
+ $setVar[CandyMoneyPrincipal;$sum[$getVar[CandyMoneyPrincipal;$authorID];$random[50;3000]];$authorID]
+ $footer[🔗 | https://clarinha.fun ]
+ $setVar[comandodetrabalharcooldow;$sum[$getTimestamp;900];$authorID] 
+
+ $endif 
+ 
+ $if[$randomText[a;b;c;d;e;f;g;h;i]==b]
+ $color[$var[cor]]
+ $nomention 
+ $reply 
+ $title[🖥 | Você trabalhou como Programador!]
+ $description[<:newverified:1185777501159555164> **|** <@$authorID>, você conseguiu um emprego de **Programador** na **Empresa Microsoft,** e recebeu um salário de **🍬$random[50;3000] Candys!** Parabéns pelo ótimo trabalho, você fez dois novos bots para o Discord, o Lord e o DreamTeam. Ótimo trabalho!]
+ $thumbnail[$var[thumbnail]]
+ $setVar[CandyMoneyPrincipal;$sum[$getVar[CandyMoneyPrincipal;$authorID];$random[50;3000]];$authorID]
+ $footer[🔗 | https://clarinha.fun ]
+ $setVar[comandodetrabalharcooldow;$sum[$getTimestamp;900];$authorID] 
+ $endif 
+ 
+ $if[$randomText[a;b;c;d;e;f;g;h;i]==c]
+ $color[$var[cor]]
+ $nomention 
+ $reply 
+ $title[💸 | Você trabalhou como Agiota!]
+ $description[<:newverified:1185777501159555164> **|** <@$authorID>, você conseguiu um emprego de **Agiota** na **Empresa Agiotismo Brasil,** e recebeu um salário de **🍬$random[50;5000] Candys!** Parabéns pelo ótimo trabalho, você fez dois empréstimos e faliu duas pessoas, hahaha!]
+ $thumbnail[$var[thumbnail]]
+ $setVar[CandyMoneyPrincipal;$sum[$getVar[CandyMoneyPrincipal;$authorID];$random[50;5000]];$authorID]
+ $footer[🔗 | https://clarinha.fun ]
+ $setVar[comandodetrabalharcooldow;$sum[$getTimestamp;900];$authorID] 
+
+ $endif 
+ 
+ $if[$randomText[a;b;c;d;e;f;g;h;i]==d]
+ $color[$var[cor]]
+ $nomention 
+ $reply 
+ $title[🍩 | Você trabalhou como Confeiteiro!]
+ $description[<:newverified:1185777501159555164> **|** <@$authorID>, você conseguiu um emprego de **Confeiteiro** na **Confeitaria Karina Doceiras,** e recebeu um salário de **🍬$random[50;3000] Candys!** Parabéns pelo ótimo trabalho, os doces e os bolos estavam incríveis!]
+ $thumbnail[$var[thumbnail]]
+ $setVar[CandyMoneyPrincipal;$sum[$getVar[CandyMoneyPrincipal;$authorID];$random[50;3000]];$authorID]
+ $footer[🔗 | https://clarinha.fun ]
+ $setVar[comandodetrabalharcooldow;$sum[$getTimestamp;900];$authorID] 
+ $endif 
+ 
+ $if[$randomText[a;b;c;d;e;f;g;h;i]==e]
+ $color[$var[cor]]
+ $nomention 
+ $reply 
+ $title[✉️ | Você trabalhou como Carteiro!]
+ $description[<:newverified:1185777501159555164> **|** <@$authorID>, você conseguiu um emprego de **Carteiro** na **Empresa Correios do Brasil,** e recebeu um salário de **🍬$random[50;3000] Candys!** Parabéns pelo ótimo trabalho, a encomenda só demorou 60 dias pra chegar... Eita Correios.]
+ $thumbnail[$var[thumbnail]]
+ $setVar[CandyMoneyPrincipal;$sum[$getVar[CandyMoneyPrincipal;$authorID];$random[50;3000]];$authorID]
+ $footer[🔗 | https://clarinha.fun ]
+ $setVar[comandodetrabalharcooldow;$sum[$getTimestamp;900];$authorID] 
+ $endif 
+ 
+ $if[$randomText[a;b;c;d;e;f;g;h;i]==f]
+ $color[$var[cor]]
+ $nomention 
+ $reply 
+ $title[👮‍♀️ | Você trabalhou como Policial!]
+ $description[<:newverified:1185777501159555164> **|** <@$authorID>, você conseguiu um emprego de **Policial** na *Polícia Militar do Brasil,** e recebeu um salário de **🍬$random[50;3000] Candys!** Parabéns pelo ótimo trabalho, você prendeu três meliantes!]
+ $thumbnail[$var[thumbnail]]
+ $setVar[CandyMoneyPrincipal;$sum[$getVar[CandyMoneyPrincipal;$authorID];$random[50;3000]];$authorID]
+ $footer[🔗 | https://clarinha.fun ]
+ $setVar[comandodetrabalharcooldow;$sum[$getTimestamp;900];$authorID] 
+ $endif 
+ 
+ $if[$randomText[a;b;c;d;e;f;g;h;i]==g]
+ $color[$var[cor]]
+ $nomention 
+ $reply 
+ $title[⛽️ | Você trabalhou como Frentista!]
+ $description[<:newverified:1185777501159555164> **|** <@$authorID>, você conseguiu um emprego de **Frentista** no **Posto Petrobras Vila Copos,** e recebeu um salário de **🍬$random[50;3000] Candys!** Parabéns pelo ótimo trabalho, você abasteceu 30 carros e a empresa ficou com 20 mil reais, hahaha!]
+ $thumbnail[$var[thumbnail]]
+ $setVar[CandyMoneyPrincipal;$sum[$getVar[CandyMoneyPrincipal;$authorID];$random[50;3000]];$authorID]
+ $footer[🔗 | https://clarinha.fun ]
+ $setVar[comandodetrabalharcooldow;$sum[$getTimestamp;900];$authorID] 
+ $endif 
+ 
+ $if[$randomText[a;b;c;d;e;f;g;h;i]==h]
+ $color[$var[cor]]
+ $nomention 
+ $reply 
+ $title[🚅 | Você trabalhou como Maquinista!]
+ $description[<:newverified:1185777501159555164> **|** <@$authorID>, você conseguiu um emprego de **Maquinista** no **Metrô de São Paulo - Itaquera,** e recebeu um salário de **🍬$random[50;3000] Candys!** Parabéns pelo ótimo trabalho, você transportou 10 mil pessoas!]
+ $thumbnail[$var[thumbnail]]
+ $setVar[CandyMoneyPrincipal;$sum[$getVar[CandyMoneyPrincipal;$authorID];$random[50;3000]];$authorID]
+ $footer[🔗 | https://clarinha.fun ]
+ $setVar[comandodetrabalharcooldow;$sum[$getTimestamp;900];$authorID] 
+
+ $endif 
+ 
+ $if[$randomText[a;b;c;d;e;f;g;h;i]==i]
+ $color[$var[cor]]
+ $nomention 
+ $reply 
+ $title[🔧 | Você trabalhou como Mecânico!]
+ $description[<:newverified:1185777501159555164> **|** <@$authorID>, você conseguiu um emprego de **Mecânico** na **Oficina do seu Zé,** e recebeu um salário de **🍬$random[50;3000] Candys!** Parabéns pelo ótimo trabalho, você só esqueceu de devolver algumas peças do carro.]
+ $thumbnail[$var[thumbnail]]
+ $setVar[CandyMoneyPrincipal;$sum[$getVar[CandyMoneyPrincipal;$authorID];$random[50;3000]];$authorID]
+ $footer[🔗 | https://clarinha.fun ]
+ $setVar[comandodetrabalharcooldow;$sum[$getTimestamp;900];$authorID] 
+ 
+ $endif 
+ 
+ $ignoreTriggerCase 
+ 
+ $channelSendMessage[1137142368139743382;
+**<:jslogo:1137073414184636548> | Comando usado via Slash**
+- **Autor:**
+`` $username ($authorID)``
+- **Comando:** 
+``/trabalhar``
+- **Servidor:** 
+``$serverName[$guildID] ($guildID)``
+- **Executado no Canal:** 
+``$channelName[$channelID] ($channelID) ``
+- **Horário:**
+<t:$getTimestamp:D>]
+
