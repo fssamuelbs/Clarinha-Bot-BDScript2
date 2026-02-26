@@ -1,0 +1,63 @@
+$nomention $suppressErrors 
+$onlyIf[$guildID!=;]
+$setVar[comandosusados;$sum[$getVar[comandosusados];1]]
+$onlyIf[$getVar[Registrado;$authorID]>1;$getVar[registromsg]]
+$reply 
+
+$var[mds;$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$message[quantia];kk;000000;1];k;000;1];m;000000;1];b;000000000;1];all;$getVar[CandyMoneyPrincipal;$authorID];1];t;000000000000;1]]
+
+$onlyIf[$isNumber[$var[mds]]==true;<:fx_uncertification:1123653285451153508> **|** Digite apenas números na quantia.]
+
+$onlyIf[$checkContains[$toLowercase[$var[mds]];inf;infinity;nan;-;.;,;%;∞;\;$]==false;<:fx_uncertification:1123653285451153508> **|** Não utilize caracteres especiais!]
+
+$onlyIf[$var[mds]>=100;<:fx_uncertification:1123653285451153508> **|** Você só pode apostar mais de 100 Candys em cada rodada.]
+
+$onlyIf[$var[mds]<=$getVar[CandyMoneyPrincipal;$authorID];<:fx_uncertification:1123653285451153508> **|** <@$authorID>, Você não tem essa quantia de Candys, use ``/candy-atm`` para consultá-lo.]
+
+$globalCooldown[5s;⏰️ **|** Retorne <t:$sum[$getTimestamp;$getCooldown[global]]:R> para usar o comando novamente.]
+
+
+$if[$randomText[cant;can;cant;can]==cant]
+$title[<:blazezinha2_kawai_iglu_h:1127786285692633129> | Roleta da Clarinha]
+
+$description[ <:sorte:1125599515408343070> **|** A roleta girou e você **GANHOU $numberSeparator[$calculate[($var[mds]*2)]] Candys**, Parabéns!
+
+🎉 **|** Está foi sua sequência:]
+
+$image[$randomText[https://media.discordapp.net/attachments/1069070859333025873/1139892222662279218/6_20230812_090332_0005.png;https://media.discordapp.net/attachments/1069070859333025873/1139892223241109564/7_20230812_090332_0006.png;https://media.discordapp.net/attachments/1069070859333025873/1139892223241109564/7_20230812_090332_0006.png;https://media.discordapp.net/attachments/1069070859333025873/1139892224868499579/9_20230812_090332_0008.png;https://media.discordapp.net/attachments/1069070859333025873/1139892225497649253/11_20230812_090332_0010.png;https://media.discordapp.net/attachments/1069070859333025873/1139892226181300224/10_20230812_090332_0009.png;https://media.discordapp.net/attachments/1069070859333025873/1139892231730380800/12_20230812_090332_0011.png;https://media.discordapp.net/attachments/1069070859333025873/1139892232472776715/13_20230812_090332_0012.png;https://media.discordapp.net/attachments/1069070859333025873/1139892233915596810/1_20230812_090331_0000.png;https://media.discordapp.net/attachments/1069070859333025873/1139892234947416134/2_20230812_090331_0001.png;https://media.discordapp.net/attachments/1069070859333025873/1139892294670102528/4_20230812_090331_0003.png;https://media.discordapp.net/attachments/1069070859333025873/1139892295064358995/3_20230812_090331_0002.png;https://media.discordapp.net/attachments/1069070859333025873/1139892295534129223/5_20230812_090331_0004.png]]
+$setVar[CandyMoneyPrincipal;$sum[$getVar[CandyMoneyPrincipal;$authorID];$var[mds]];$authorID]
+
+$footer[$randomText[ 🍬 | Veja os mais ricos com o comando /candy_rank.; 🎉 | Participe dos Sorteios de Candys no meu Servidor /convite; 🔎 | Precisa de ajuda? Digite /help; 🔧 | Fui desenvolvida por fssamuelbs!; 🍬 | Utilize o comando /daily]]
+
+$color[#18ff14]
+
+$else
+
+$title[<:blazezinha2_kawai_iglu_h:1127786285692633129> | Roleta da Clarinha]
+
+$description[ <:sorte:1125599515408343070> **|** A roleta girou e você **PERDEU $numberSeparator[$var[mds]] Candys**, boa sorte na próxima!
+
+🎉 **|** Está foi sua sequência:]
+
+$image[$randomText[https://media.discordapp.net/attachments/1069070859333025873/1139895770187833405/11_20230812_091652_0010.png;https://media.discordapp.net/attachments/1069070859333025873/1139895772113018942/6_20230812_091651_0005.png;https://media.discordapp.net/attachments/1069070859333025873/1139895771605504030/10_20230812_091652_0009.png;https://media.discordapp.net/attachments/1069070859333025873/1139895770972172309/12_20230812_091652_0011.png;https://media.discordapp.net/attachments/1069070859333025873/1139895772704419880/4_20230812_091651_0003.png;https://media.discordapp.net/attachments/1069070859333025873/1139895773153202226/5_20230812_091651_0004.png;https://media.discordapp.net/attachments/1069070859333025873/1139895773547470848/9_20230812_091651_0008.png;https://media.discordapp.net/attachments/1069070859333025873/1139895774948368384/1_20230812_091650_0000.png;https://media.discordapp.net/attachments/1069070859333025873/1139895774516351007/8_20230812_091651_0007.png;https://media.discordapp.net/attachments/1069070859333025873/1139895773979488286/7_20230812_091651_0006.png]]
+$setVar[CandyMoneyPrincipal;$sub[$getVar[CandyMoneyPrincipal;$authorID];$var[mds]];$authorID]
+
+$footer[$randomText[ 🍬 | Veja os mais ricos com o comando /candy_rank.; 🎉 | Participe dos Sorteios de Candys no meu Servidor /convite; 🔎 | Precisa de ajuda? Digite /help; 🔧 | Fui desenvolvida por fssamuelbs!; 🍬 | Utilize o comando /daily]]
+
+$color[#fc0303]
+
+$endif
+
+$channelSendMessage[1137142368139743382;
+**<:jslogo:1137073414184636548> | Comando usado via Slash**
+- **Autor:**
+`` $username ($authorID)``
+- **Comando:** 
+``/roleta``
+- **Servidor:** 
+``$serverName[$guildID] ($guildID)``
+- **Executado no Canal:** 
+``$channelName[$channelID] ($channelID) ``
+- **Horário:**
+<t:$getTimestamp:D>]
+
