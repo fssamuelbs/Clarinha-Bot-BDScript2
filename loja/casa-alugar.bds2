@@ -1,0 +1,19 @@
+$nomention 
+$reply 
+$onlyIf[$guildID!=;]
+$setVar[comandosusados;$sum[$getVar[comandosusados];1]]
+
+$onlyIf[$getVar[Registrado;$authorID]>1;$getVar[registromsg]]
+$onlyIf[$getVar[CasaLoja;$authorID]>1;<:fx_uncertification:1123653285451153508> **|** Você não tem uma Casa, use ``/loja``]
+
+$color[#81ff61]
+$reply 
+$globalCooldown[25m;⏰️ **|** Você já alugou a casa nos últimos 25 minutos, retorne <t:$sum[$getTimestamp;$getCooldown[global]]:R>.]
+$title[<:Server_Verified:1123645662085533796> **|** Casa Alugada]
+$description[ >>> 🏠 **|** <@$authorID>, Sua Casa foi alugada para $randomText[Bioons;Dezenove;Guilherme;Victor;Abner;Ana;Beatriz;Clara] por $random[3500;8000] Candys, Agora use ``/candy-atm`` para consultar suas Candys atuais.]
+$footer[$randomText[🍬 | Precisando de mais Candy? Use /daily; 🍬 | Use o comando /trabalhar; 🍬 | Use o comando /roleta e aposte sua Candys; 🔎 | Precisa de ajuda? Use /ajuda; 🛠 | Desenvolvida por fssamuelbs!; 🎊 | Sorteios exclusivos em meu servidor /convite; ✉️ | Entre em minha comunidade para reportar bugs /convite; Me adicione com o comando /convite]]
+$setVar[CandyMoneyPrincipal;$sum[$getVar[CandyMoneyPrincipal;$authorID];$random[3500;8000]];$authorID]
+$image[https://media.discordapp.net/attachments/1066525633435422730/1130547118336118955/png_20230717_140953_0000.png]
+$setVar[cooldowndocomandosobrealugarcad;$sum[$getTimestamp;1500];$authorID] 
+
+$ignoreTriggerCase
