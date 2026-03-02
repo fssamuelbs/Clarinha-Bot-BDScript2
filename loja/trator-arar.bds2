@@ -1,0 +1,18 @@
+$nomention 
+$reply 
+$onlyIf[$guildID!=;]
+$setVar[comandosusados;$sum[$getVar[comandosusados];1]]
+
+$onlyIf[$getVar[Registrado;$authorID]>1;$getVar[registromsg]]
+$onlyIf[$getVar[TratorLoja;$authorID]>1;<:fx_uncertification:1123653285451153508> **|** Você não tem um Trator, use ``/loja``]
+
+$color[#00ff37]
+$reply 
+$globalCooldown[22m;⏰️ **|** Você já arou nos últimos 22 minutos, retorne <t:$sum[$getTimestamp;$getCooldown[global]]:R>]
+$title[<:Server_Verified:1123645662085533796> **|** Terreno arado!]
+$description[ >>> <:trator:1081986123120791604> **|** <@$authorID>, Você arou o terreno de $randomText[Bioons;Dezenove;Guilherme;Victor;Abner;Ana;Beatriz;Clara] e recebeu **$random[4000;10000] Candys,** Agora use ``/candy-atm`` para consultar suas Candys atuais.]
+$footer[$randomText[🍬 | Precisando de mais Candy? Use /daily; 🍬 | Use o comando /trabalhar; 🍬 | Use o comando /roleta e aposte sua Candys; 🔎 | Precisa de ajuda? Use /ajuda; 🛠 | Desenvolvida por fssamuelbs!; 🎊 | Sorteios exclusivos em meu servidor /convite; ✉️ | Entre em minha comunidade para reportar bugs /convite; Me adicione com o comando /convite]]
+$setVar[CandyMoneyPrincipal;$sum[$getVar[CandyMoneyPrincipal;$authorID];$random[4000;10000]];$authorID]
+$image[https://media.discordapp.net/attachments/1077224266329764010/1130691373067141241/timthumb.png]
+$setVar[tratorararcd;$sum[$getTimestamp;1320];$authorID] 
+$ignoreTriggerCase
