@@ -1,0 +1,17 @@
+$nomention 
+$reply 
+$if[$and[$textSplit[$customID;-]$splitText[2]==Supermercado;$splitText[3]==$authorID]==true]
+$removeButtons
+
+$onlyIf[$getVar[Registrado;$authorID]>1;<:fx_uncertification:1123653285451153508> **|** <@$authorID>, Você deve se registrar em meu sistema antes de usar meus comandos, use ``/registrar``]
+$onlyIf[$getVar[SupermercadoT1;$authorID]<2;<:fx_uncertification:1123653285451153508> **|** <@$authorID>, Você já tem um Supermercado, use ``/supermercados-alimentos``]
+$onlyIf[$getVar[CandyMoneyPrincipal;$authorID]>300000;<:fx_uncertification:1123653285451153508> **|** Você não possui **300.000** Candys, consulte seu saldo usando ``/candy-atm``.]
+$thumbnail[https://media.discordapp.net/attachments/1066525633435422730/1129492357868429402/20230714_093937_0000.png]
+$title[<:Server_Verified:1123645662085533796> **|** Compra realizada!]
+$description[🛒 **|** <@$authorID> Você comprou o Assaí Atacadista no valor de 🍬**300.000** Candys, para começar a obter lucros, use ``/supermercado-alimentos``.]
+$color[#aa0dff]
+$footer[$randomText[🍬 | Precisando de mais Candy? Use /daily; 🍬 | Use o comando /trabalhar; 🍬 | Use o comando /roleta e aposte sua Candys; 🔎 | Precisa de ajuda? Use /ajuda; 🛠 | Desenvolvida por fssamuelbs!; 🎊 | Sorteios exclusivos em meu servidor /convite; ✉️ | Entre em minha comunidade para reportar bugs /convite;✉️ | Me adicione com o comando /convite]]
+$setVar[SupermercadoT1;$sum[$getVar[SupermercadoT1;$authorID];3];$authorID]
+$setVar[CandyMoneyPrincipal;$sub[$getVar[CandyMoneyPrincipal;$authorID];300000];$authorID]
+ 
+$endif 
