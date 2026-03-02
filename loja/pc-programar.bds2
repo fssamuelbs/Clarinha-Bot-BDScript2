@@ -1,0 +1,18 @@
+$nomention 
+$reply 
+$onlyIf[$guildID!=;]
+$setVar[comandosusados;$sum[$getVar[comandosusados];1]]
+
+$onlyIf[$getVar[Registrado;$authorID]>1;$getVar[registromsg]]
+$onlyIf[$getVar[PCdaLoja01;$authorID]>1;<:fx_uncertification:1123653285451153508> **|** Você não tem uma PC, use ``/loja``.]
+
+$color[#2478ed]
+$reply 
+$globalCooldown[30m;⏰️ **|** Você já programou nos últimos 25 minutos, retorne <t:$sum[$getTimestamp;$getCooldown[global]]:R>]
+$title[<:Server_Verified:1123645662085533796> **|** Aplicativo desenvolvido!]
+$description[ >>> <:pc:1127662897036795944> **|** <@$authorID>, Você fez um comando de $randomText[aposta;fazenda;ban;rifa;roleta;warn;fofoca] para o(a) bot $randomText[Loritta;Clarinha;Lord;Abner;Dyno;Koya;MEE6;Larissa] por $random[4000;5000] Candys, volte em 30 minutos para desenvolver outro comando.]
+$footer[$randomText[🍬 | Precisando de mais Candy? Use /daily; 🍬 | Use o comando /trabalhar; 🍬 | Use o comando /roleta e aposte sua Candys; 🔎 | Precisa de ajuda? Use /ajuda; 🛠 | Desenvolvida por fssamuelbs!; 🎊 | Sorteios exclusivos em meu servidor /convite; ✉️ | Entre em minha comunidade para reportar bugs /convite; 💌 | Me adicione com o comando /convite]]
+$setVar[CandyMoneyPrincipal;$sum[$getVar[CandyMoneyPrincipal;$authorID];$random[4000;5000]];$authorID]
+$image[https://media.discordapp.net/attachments/1077269343211106345/1130656612021972992/eu-vou-criar-um-bot-para-seu-serviddor_1.jpg]
+$setVar[pcprogramarcooldow;$sum[$getTimestamp;1800];$authorID] 
+$ignoreTriggerCase
