@@ -1,0 +1,22 @@
+$nomention 
+$reply 
+$onlyIf[$guildID!=;]
+$suppressErrors[<:fx_uncertification:1123653285451153508> **|** Eu não tenho todas as permissões para ser usada nesse servidor, entre em contato com a Administração para me conceder permissões.]
+$setVar[comandosusados;$sum[$getVar[comandosusados];1]]
+$onlyIf[$getVar[Registrado;$authorID]>1;<:fx_uncertification:1123653285451153508> **|** Epa <@$authorID>! Esse é seu primeiro contato comigo, para começar a se divertir comigo você deve se registrar, para isso use ``/registrar`` ou ``cl.registrar``.]
+$globalCooldown[$getVar[cooldown;$authorID];<:fx_uncertification:1123653285451153508> **|** Você está realizando uma entrega, retorne <t:$sum[$getTimestamp;$getCooldown[global]]:R>.]
+$cooldown[5m;<@$authorID>, Você usou esse comando recentemente. ]
+$title[<:entregador:1131024536494682132> **|** Painel do Entregador]
+$description[📦 **|** <@$authorID>, Aqui você pode selecionar qual entrega deseja realizar, lembrando que o mapa é da Cidade de Rio de Janeiro, e cada tarefa possui um tempo para ser mínimo para ser realizada.]
+$image[https://media.discordapp.net/attachments/1127756343281987645/1131001935244304444/Screenshot_20230718_200703_Maps.jpg]
+$thumbnail[https://media.discordapp.net/attachments/1127756343281987645/1131026889243369572/logo-smile-512x512.png]
+$footer[$randomText[🍬 | Precisando de mais Candy? Use /daily; 🍬 | Use o comando /trabalhar; 🍬 | Use o comando /roleta e aposte sua Candys; 🔎 | Precisa de ajuda? Use /ajuda; 🛠 | Desenvolvida por fssamuelbs!; 🎊 | Sorteios exclusivos em meu servidor /convite; ✉️ | Entre em minha comunidade para reportar bugs /convite; Me adicione com o comando /convite]]
+$color[#ff1414]
+$newSelectMenu[ifoodentregas;1;1;Selecione uma entrega...]
+$addSelectMenuOption[ifoodentregas;McDonald's - Loja Vila Valqueire Shopping;para-$authorID;Tempo de entrega: 10 min (6,7 km) - entrega para Alice;no;<:mc:1131030834804183110>]
+$addSelectMenuOption[ifoodentregas;Domino's Pizza - Loja Nilton Santos;rara-$authorID;Tempo de entrega: 12 min (7,2 km) - entrega para João;no;<:emoji_21:1131033235451809853>]
+$addSelectMenuOption[ifoodentregas;Bob's - Loja Shopping Jardim Guadalupe;uara-$authorID;Tempo de entrega: 20 min (16 km) - entrega para Larissa;no;<:bobs:1131035473037492264>]
+$addSelectMenuOption[ifoodentregas;Subway - Loja Seropédica;pera-$authorID;Tempo de entrega: 38 min (35 km) - entrega para Victor;no;<:suwbat:1131036828615585872>]
+$setVar[cooldown;10s;$authorID]
+
+$ignoreTriggerCase
