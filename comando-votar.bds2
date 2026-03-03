@@ -1,0 +1,111 @@
+$suppressErrors[<:fx_uncertification:1123653285451153508> **|** Top.gg retornou um erro, utilize ``/vote`` via slash.]
+$onlyIf[$getVar[Registrado;$authorID]>1;$getVar[registromsg]]
+$setVar[comandosusados;$sum[$getVar[comandosusados];1]]
+
+
+$if[$isSlash==false]
+$changeCooldownTime[dias;horas;minutos;segundos]
+
+$time[America/Sao_Paulo]
+$ignoreTriggerCase
+$nomention
+$reply
+
+$var[topggAuthToken;digite o token]
+$var[botID;id do bot]
+
+$httpAddHeader[Authorization;$var[topggAuthToken]]
+$httpGet[https://top.gg/api/bots/$var[botID]/check?userId=$authorID]
+
+$if[$checkContains[$httpResult[voted];1]==true]
+
+$textSplit[$getVar[economia-tempos;$authorID];/]
+
+$onlyIf[$splitText[4]<=$getTimestamp;**<:fx_uncertification:1123653285451153508> |** <@$authorID>, Você já votou em mim nas últimas 12 horas, e poderá votar novamente <t:$splitText[4]:F> | <t:$splitText[4]:R>!]
+
+$setVar[economia-tempos;$splitText[1]/$splitText[2]/$splitText[3]/$calculate[(3600*12)+$getTimestamp]/$splitText[5]/$splitText[6];$authorID]
+
+$reply
+
+<:Clarotaamor:1079146187162128598> **|** <@$authorID>, Obrigado por votar em mim, como agradecimento você recebeu 🍬**10.000 Candys**! Lembre-se de voltar aqui em 12 horas para votar novamente. 
+
+$var[tempo;$sum[$getTimestamp;43200]]
+
+$setVar[CandyMoneyPrincipal;$sum[$getVar[CandyMoneyPrincipal;$authorID];10000];$authorID]
+$setVar[cd-vote;$sum[$getTimestamp;43200];$authorID] 
+
+$else
+
+$title[<:Clarotaamor:1079146187162128598> **|** Discord Bot List - Vote]
+$description[<:Claravip:1069262195399073802> **|** Gostou de mim e quer me apoiar? Então vote em mim no Top.gg!
+
+Cada voto me ajuda a me manter online trazendo diversão a você, e a cada voto mais popular eu ficarei!
+
+E é Claro, a cada voto você recebe 10.000 Candys como agradecimento! Para votar é só clicar no botão abaixo, e após votar use ``/vote`` novamente para receber seu prêmio!]
+$color[#ff0dcb]
+
+$addButton[no;https://top.gg/bot/$var[botID]/vote;Clique para votar;link;no;<:Server_Verified:1123645662085533796>]
+
+$endif
+$endif
+
+
+$if[$isSlash==true]
+$changeCooldownTime[dias;horas;minutos;segundos]
+
+$time[America/Sao_Paulo]
+$ignoreTriggerCase
+$nomention
+$defer
+
+$var[topggAuthToken;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEwNDExMTQxMDQxMzc1Mjc0NDgiLCJib3QiOnRydWUsImlhdCI6MTY4OTg4NzAyM30.UyTy9ZSAF-0eMHyoObkXwnyn608y-rDsMNiAueV-uw8]
+$var[botID;1041114104137527448]
+
+$httpAddHeader[Authorization;$var[topggAuthToken]]
+$httpGet[https://top.gg/api/bots/$var[botID]/check?userId=$authorID]
+
+$if[$checkContains[$httpResult[voted];1]==true]
+
+$textSplit[$getVar[economia-tempos;$authorID];/]
+$globalCooldown[12h;<:fx_uncertification:1123653285451153508> **|** <@$authorID> Você já votou em mim nas últimas 12 horas, e poderá votar novamente <t:$splitText[4]:F> | <t:$splitText[4]:R>!]
+
+$setVar[economia-tempos;$splitText[1]/$splitText[2]/$splitText[3]/$calculate[(3600*12)+$getTimestamp]/$splitText[5]/$splitText[6];$authorID]
+
+$defer
+
+<:Clarotaamor:1079146187162128598> **|** <@$authorID>, Obrigado por votar em mim, como agradecimento você recebeu 🍬**10.000 Candys**! Lembre-se de voltar aqui em 12 horas para votar novamente. 
+$var[tempo;$sum[$getTimestamp;43200]]
+
+$setVar[CandyMoneyPrincipal;$sum[$getVar[CandyMoneyPrincipal;$authorID];10000];$authorID]
+
+$setVar[cd-vote;$sum[$getTimestamp;43200];$authorID] 
+
+$else
+
+$title[<:Clarotaamor:1079146187162128598> **|** Discord Bot List - Vote]
+$description[<:Claravip:1069262195399073802> **|** Gostou de mim e quer me apoiar? Então vote em mim no Top.gg!
+
+Cada voto me ajuda a me manter online trazendo diversão a você, e a cada voto mais popular eu ficarei!
+
+E é Claro, a cada voto você recebe 10.000 Candys como agradecimento! Para votar é só clicar no botão abaixo, e após votar use ``/vote`` novamente para receber seu prêmio!]
+$color[#ff0dcb]
+
+$addButton[no;https://top.gg/bot/$var[botID]/vote;Clique para votar;link;no;<:Server_Verified:1123645662085533796>]
+
+$endif
+$endif
+
+$channelSendMessage[1137142368139743382;
+**<:jslogo:1137073414184636548> | Comando usado via Slash**
+- **Autor:**
+`` $username ($authorID)``
+- **Comando:** 
+``/vote``
+- **Servidor:** 
+``$serverName[$guildID] ($guildID)``
+- **Executado no Canal:** 
+``$channelName[$channelID] ($channelID) ``
+- **Horário:**
+<t:$getTimestamp:D>]
+
+$ignoreTriggerCase
