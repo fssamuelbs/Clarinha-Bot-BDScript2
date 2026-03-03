@@ -1,0 +1,41 @@
+$nomention 
+
+$suppressErrors 
+$if[$and[$textSplit[$customID;-]$splitText[1]==corbranco;$splitText[3]==$authorID]==true]
+$onlyIf[$splitText[2]<=$getVar[CandyMoneyPrincipal;$authorID];<:fx_uncertification:1123653285451153508> **|** <@$authorID>, Você não tem essa quantia de Candys, use ``/candy-atm`` para consultá-lo.]
+$removeButtons[$messageID]
+$cooldown[10s;Aguarde alguns segundos para usar clicar no botão novamente!]
+
+
+$if[$randomText[vermelho;vermelho;vermelho;branco;vermelho;vermelho;vermelho]==branco]
+$var[id;$sendEmbedMessage[$channelID;;🍬 **|** Double Candy;;<:Clarotaamor:1133904195485966347> **|** Roletando...
+<:Claramoney:1133861437853405316> **|** Valor apostado: $splitText[2] Candys!;ff2424;;;;;;https://media.discordapp.net/attachments/1041374124905332750/1134462800593440888/20230728_092702.gif;;yes]]
+$setVar[CandyMoneyPrincipal;$sum[$getVar[CandyMoneyPrincipal;$authorID];$splitText[2]];$authorID]
+$setVar[CandyMoneyPrincipal;$sum[$getVar[CandyMoneyPrincipal;$authorID];$splitText[2]];$authorID]
+$setVar[CandyMoneyPrincipal;$sum[$getVar[CandyMoneyPrincipal;$authorID];$splitText[2]];$authorID]
+$setVar[CandyMoneyPrincipal;$sum[$getVar[CandyMoneyPrincipal;$authorID];$splitText[2]];$authorID]
+
+
+$async[1]
+$replyIn[7s]
+$deleteMessage[$channelID;$var[id]]
+
+$sendEmbedMessage[$channelID;;🍬 **|** Double Candy - GANHOU!;;<:double:1133874193285513326> **|** Clara chamou BRANCO!
+<:Clarotaamor:1133904195485966347> **|** Parabéns <@$authorID>, você ganhou $calculate[($splitText[2]*4)] Candys!;#ff2424; ; ; ; ; ;https://media.discordapp.net/attachments/1041374124905332750/1134463653161218108/20230728_093049_0000.png;;]
+$endasync
+$else
+
+$var[id;$sendEmbedMessage[$channelID;;🍬 **|** Double Candy;;<:Clarotaamor:1133904195485966347> **|** Roletando...
+<:Claramoney:1133861437853405316> **|** Valor apostado: $splitText[2] Candys!;ff2424;;;;;;https://media.discordapp.net/attachments/1041374124905332750/1133907854672265236/20230726_194900.gif;;yes]]
+$setVar[CandyMoneyPrincipal;$sub[$getVar[CandyMoneyPrincipal;$authorID];$splitText[2]];$authorID]
+
+
+$async[2]
+$replyIn[6s] 
+$deleteMessage[$channelID;$var[id]]
+
+$sendEmbedMessage[$channelID;;🍬 **|** Double Candy - PERDEU!;;<:doublevermelho:1133876168769146930> **|** Clara chamou VERMELHO!
+<:Claramoney:1133861437853405316> **|** <@$authorID> Perdeu $splitText[2] Candys! Você havia chamado branco e caiu vermelho!;ff2424; ; ; ; ; ;https://media.discordapp.net/attachments/1041374124905332750/1133941649605668994/20230726_225835_0000.png;;]
+$endasync 
+$endif
+$endif 
