@@ -1,0 +1,65 @@
+$nomention 
+
+  
+$suppressErrors 
+  $if[$and[$textSplit[$customID;-]$splitText[1]==CarroAzul;$splitText[3]==$authorID]==true]
+  $onlyIf[$splitText[2]<=$getVar[CandyMoneyPrincipal;$authorID];<:fx_uncertification:1123653285451153508> **|** <@$authorID>, Você não tem essa quantia de Candys, use ``/candy-atm`` para consultá-lo.]
+  $var[quantia;$splitText[2]]
+ 
+$var[resultado;$randomText[azul;verde;verde;azul;vermelho]]
+ $removeButtons[$messageID]
+ $cooldown[7s;Aguarde alguns segundos para usar clicar no botão novamente!]
+
+
+$if[$var[resultado]==azul]
+$var[id;$sendEmbedMessage[$channelID;;🏁 | Corrida de Carros;;🏎  **|** A corrida está acontecendo, aguarde o resultado....
+🍬 **|** Valor apostado: $var[quantia] Candys no carro **Azul**!;f863ff;;;;;;https://i.postimg.cc/sDYxgnG9/20231224-1228521.gif;;yes]]
+$setVar[CandyMoneyPrincipal;$sub[$getVar[CandyMoneyPrincipal;$authorID];$var[quantia]];$authorID]
+
+$async[1]
+$replyIn[4s]
+$deleteMessage[$channelID;$var[id]]
+
+$sendEmbedMessage[$channelID;;🏁 | Corrida de Carros - GANHOU!;;🏎 **|** O Carro Azul que você escolheu passou na frente de todo mundo e venceu a corrida!
+🎉 **|** Parabéns <@$authorID>, você ganhou $calculate[($var[quantia]*2)] Candys!;#f863ff; ; ; ; ; ;https://i.postimg.cc/wMbVy6GZ/1-20231224-123032-0000.jpg;;yes]]
+$setVar[CandyMoneyPrincipal;$sum[$getVar[CandyMoneyPrincipal;$authorID];$var[quantia]];$authorID]
+$setVar[CandyMoneyPrincipal;$sum[$getVar[CandyMoneyPrincipal;$authorID];$var[quantia]];$authorID]
+
+
+$endasync 
+
+  $endif 
+
+$if[$var[resultado]==vermelho]
+$var[id;$sendEmbedMessage[$channelID;;🏁 | Corrida de Carros;;🏎  **|** A corrida está acontecendo, aguarde o resultado....
+🍬 **|** Valor apostado: $var[quantia] Candys no carro **Azul**!;f863ff;;;;;;https://i.postimg.cc/y6vDY1Lj/1.gif;;yes]]
+$setVar[CandyMoneyPrincipal;$sub[$getVar[CandyMoneyPrincipal;$authorID];$var[quantia]];$authorID]
+
+$async[1]
+$replyIn[4s]
+$deleteMessage[$channelID;$var[id]]
+
+$sendEmbedMessage[$channelID;;🏁 | Corrida de Carros - PERDEU!;;🏎 **|** O Carro Azul que você escolheu ficou atrás de todo mundo e perdeu a corrida!
+💸 **|** Com essa derrota <@$authorID>, você perdeu $var[quantia] Candys!;#f863ff; ; ; ; ; ;https://i.postimg.cc/rsyVBP3g/1.jpg;;yes]]
+
+
+$endasync 
+   $endif
+   
+   $if[$var[resultado]==verde]
+$var[id;$sendEmbedMessage[$channelID;;🏁 | Corrida de Carros;;🏎  **|** A corrida está acontecendo, aguarde o resultado....
+🍬 **|** Valor apostado: $var[quantia] Candys no carro **Azul**!;f863ff;;;;;;https://i.postimg.cc/PxRXtkR6/20231224-0903541.gif;;yes]]
+$setVar[CandyMoneyPrincipal;$sub[$getVar[CandyMoneyPrincipal;$authorID];$var[quantia]];$authorID]
+
+$async[1]
+$replyIn[4s]
+$deleteMessage[$channelID;$var[id]]
+
+$sendEmbedMessage[$channelID;;🏁 | Corrida de Carros - PERDEU!;;🏎 **|** O Carro Azul que você escolheu ficou atrás de todo mundo e perdeu a corrida! O Carro vencedor foi o **Verde**.
+💸 **|** Com essa derrota <@$authorID>, você perdeu $var[quantia] Candys!;#f863ff; ; ; ; ; ;https://i.postimg.cc/yd8LKMMr/1-20231224-091406-0000.jpg;;yes]]
+
+
+$endasync 
+   $endif
+   
+    $endif 
