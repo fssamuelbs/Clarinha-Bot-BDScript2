@@ -1,0 +1,59 @@
+$nomention 
+$suppressErrors 
+$if[$and[$textSplit[$customID;-]$splitText[1]==pagar;$splitText[2]==$authorID]==true]
+$onlyIf[$getVar[CandyMoneyPrincipal;$splitText[4]]>=$splitText[3];<:fx_uncertification:1123653285451153508> **|** <@$authorID>, <@$splitText[4]> suas Candys foram sugadas e você não pôde concluir essa transação.]
+$removeButtons
+$cooldown[1m;]
+$nomention 
+$reply 
+$var[img;https://media.discordapp.net/attachments/1128889845134139404/1170750628105048144/Design_sem_nome_20231105_122812_0000.png?ex=655a2d7d&is=6547b87d&hm=8a9fba00eb0003ea86a4157214097f0867505adebf494facf7f27cc2e8606023&]
+$suppressErrors 
+
+$var[quantia;$splitText[3]]
+$var[imposto;$calculate[5*$splitText[3]/100]]
+$var[valorfinal;$calculate[$var[quantia]-$var[imposto]]]
+
+$title[Solicitação de Transferência]
+$description[<:ClarinhaFeliz:1170785194534522942> **|** <@$authorID> Você está prestes a transferir 🍬 $splitText[3] Candys para <@$splitText[2]>!
+🤝 **|** Para confirmar a transação, <@$splitText[4]> deve clicar no botão ** <:Server_Verified:1123645662085533796> Confirmar**!
+🛡 **| Mensagem da minha Staff:** Tenha em mente que troca de Candys por itens que possuem valor real (Nitro, Dinheiro real, Gift Card, etc) é proibido e você será banido! Também é proibido usar contas secundárias para usar daily, vote, trabalhar, etc, pois com isso você terá vantagens, e caso seja identificado por minha equipe você será banido!
+<:zpontoamarelo:1123310998007324782> **|** Lembrando que após confirmar a transação não será possível voltar atrás, envie Candys apenas para pessoas confiáveis!
+]
+
+$color[#8C52FF]
+$thumbnail[$var[img]]
+$setVar[CandyMoneyPrincipal;$sum[$getVar[CandyMoneyPrincipal;$splitText[2]];$var[valorfinal]];$splitText[2]]
+$setVar[CandyMoneyPrincipal;$sub[$getVar[CandyMoneyPrincipal;$splitText[4]];$var[quantia]];$splitText[4]]
+ 
+$reply 
+$channelSendMessage[$channelID;🎉 **|** Transferência realizada!
+<:candyland:1170738391982297198> **|** <@$authorID> recebeu <:candy:1167941123210215485> **$numberSeparator[$var[valorfinal]] Candys** patrocinados por <@$splitText[4]>! Toda operação tem um pequeno imposto, e eu fiquei com 5% do valor enviado, rsrsrsrs!]
+
+$addButton[no;button;Transferência concluída!;secondary;yes;🎉]
+       
+       
+$endif 
+
+$if[$and[$textSplit[$customID;-]$splitText[1]==recusar;$splitText[4]==$authorID]==true]
+$suppressErrors 
+
+$removeButtons
+
+$var[img;https://media.discordapp.net/attachments/1128889845134139404/1170750628105048144/Design_sem_nome_20231105_122812_0000.png?ex=655a2d7d&is=6547b87d&hm=8a9fba00eb0003ea86a4157214097f0867505adebf494facf7f27cc2e8606023&]
+
+
+$title[Solicitação de Transferência]
+$description[<:ClarinhaFeliz:1170785194534522942> **|** <@$authorID> Você está prestes a transferir 🍬 $splitText[3] Candys para <@$splitText[2]>!
+🤝 **|** Para confirmar a transação, <@$splitText[4]> deve clicar no botão ** <:Server_Verified:1123645662085533796> Confirmar**!
+🛡 **| Mensagem da minha Staff:** Tenha em mente que troca de Candys por itens que possuem valor real (Nitro, Dinheiro real, Gift Card, etc) é proibido e você será banido! Também é proibido usar contas secundárias para usar daily, vote, trabalhar, etc, pois com isso você terá vantagens, e caso seja identificado por minha equipe você será banido!
+<:zpontoamarelo:1123310998007324782> **|** Lembrando que após confirmar a transação não será possível voltar atrás, envie Candys apenas para pessoas confiáveis!
+]
+
+$color[#8C52FF]
+$thumbnail[$var[img]]
+
+$addButton[no;button;Transferência cancelada!;secondary;yes;<:candy:1167941123210215485>]
+
+
+$endif 
+
