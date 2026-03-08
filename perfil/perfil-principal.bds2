@@ -1,0 +1,37 @@
+$nomention 
+$suppressErrors 
+$setVar[comandosusados;$sum[$getVar[comandosusados];1]]
+
+$title[🖼 Perfil de $username[$message[user]]]
+$description[
+**🌸 Sobre Mim**
+$getVar[sobremim;$message[user]]
+
+**💍 Alma Gêmea**
+$getVar[casado;$message[user]]
+
+**<:Clarotaamor:1133904195485966347> Emblemas**
+$getVar[Insígnias;$message[user]]
+
+**<:Claramoney:1133861437853405316> Banco**
+🍬 **|** $numberSeparator[$getVar[CandyMoneyPrincipal;$message[user]]] Candys
+]
+
+
+$color[#a114ff]
+$footer[🌸 | Que perfil incrível!]
+$image[$getVar[back;$message[user]]]
+$thumbnail[$userAvatar[$message[user]]]
+
+$channelSendMessage[1137142368139743382;
+**<:jslogo:1137073414184636548> | Comando usado via Slash**
+- **Autor:**
+`` $username ($authorID)``
+- **Comando:** 
+``/perfil``
+- **Servidor:** 
+``$serverName[$guildID] ($guildID)``
+- **Executado no Canal:** 
+``$channelName[$channelID] ($channelID) ``
+- **Horário:**
+<t:$getTimestamp:D>]
