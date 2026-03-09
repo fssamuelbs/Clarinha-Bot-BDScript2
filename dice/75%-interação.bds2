@@ -1,0 +1,60 @@
+$nomention 
+$suppressErrors 
+$if[$and[$textSplit[$customID;-]$splitText[1]==numetos175;$splitText[3]==$authorID]==true]
+$onlyIf[$splitText[2]<=$getVar[CandyMoneyPrincipal;$authorID];<:fx_uncertification:1123653285451153508> **|** <@$authorID>, Você não tem essa quantia de Candys, use ``/candy-atm`` para consultá-lo.]
+$removeButtons[$messageID]
+$cooldown[7s;Aguarde alguns segundos para usar clicar no botão novamente!]
+
+$if[$randomText[35;90;50]==35]
+$var[id;$sendEmbedMessage[$channelID;;🎲 **|** Dice Candy;;<:Clarotaamor:1133904195485966347> **|** Jogando o dado...
+<:Claramoney:1133861437853405316> **|** Valor apostado: $splitText[2] Candys!;ff2424;;;;;;https://media.discordapp.net/attachments/1142879885338083328/1142881502452006963/20230820_1501221.gif;;yes]]
+$setVar[CandyMoneyPrincipal;$sub[$getVar[CandyMoneyPrincipal;$authorID];$splitText[2]];$authorID]
+
+$async[1]
+$replyIn[12s]
+$deleteMessage[$channelID;$var[id]]
+
+$sendEmbedMessage[$channelID;;🎲 **|** Dice Candy - GANHOU!;;<:Claramoney:1133904408720191498> **|** O Dado chamou 35!
+🎉 **|** Parabéns <@$authorID>, você ganhou $calculate[($splitText[2]*2)] Candys!;#ff2424; ; ; ; ; ;https://media.discordapp.net/attachments/1142879885338083328/1142881538837590077/20230820_150234_0000.jpg;;yes]]
+$setVar[CandyMoneyPrincipal;$sum[$getVar[CandyMoneyPrincipal;$authorID];$splitText[2]];$authorID]
+$setVar[CandyMoneyPrincipal;$sum[$getVar[CandyMoneyPrincipal;$authorID];$splitText[2]];$authorID]
+
+$endasync 
+$endif 
+
+$if[$randomText[35;90;50]==50]
+$var[id;$sendEmbedMessage[$channelID;;🎲 **|** Dice Candy;;<:Clarotaamor:1133904195485966347> **|** Jogando o dado...
+<:Claramoney:1133861437853405316> **|** Valor apostado: $splitText[2] Candys!;ff2424;;;;;;https://media.discordapp.net/attachments/1142879885338083328/1143001535110971483/20230820_2258531.gif?width=971&height=359;;yes]]
+$setVar[CandyMoneyPrincipal;$sub[$getVar[CandyMoneyPrincipal;$authorID];$splitText[2]];$authorID]
+
+
+$async[2]
+$replyIn[12s]
+$deleteMessage[$channelID;$var[id]]
+
+$sendEmbedMessage[$channelID;;🎲 **|** Dice Candy - GANHOU!;;<:Claramoney:1133904408720191498> **|** O Dado chamou 50!
+🎉 **|** Parabéns <@$authorID>, você ganhou $calculate[($splitText[2]*2)] Candys!;#ff2424; ; ; ; ; ;https://media.discordapp.net/attachments/1142879885338083328/1143001088967049226/20230820_225726_0000.jpg?width=971&height=359;;yes]]
+$setVar[CandyMoneyPrincipal;$sum[$getVar[CandyMoneyPrincipal;$authorID];$splitText[2]];$authorID]
+$setVar[CandyMoneyPrincipal;$sum[$getVar[CandyMoneyPrincipal;$authorID];$splitText[2]];$authorID]
+
+
+$endasync 
+$endif 
+
+$if[$randomText[35;90;50]==90]
+$var[id;$sendEmbedMessage[$channelID;;🎲 **|** Dice Candy;;<:Clarotaamor:1133904195485966347> **|** Jogando o dado...
+<:Claramoney:1133861437853405316> **|** Valor apostado: $splitText[2] Candys!;ff2424;;;;;;https://media.discordapp.net/attachments/1142888335908536380/1143513714776096788/20230822_0853311.gif;;yes]]
+$setVar[CandyMoneyPrincipal;$sub[$getVar[CandyMoneyPrincipal;$authorID];$splitText[2]];$authorID]
+
+$async[3]
+$replyIn[12s]
+$deleteMessage[$channelID;$var[id]]
+
+$sendEmbedMessage[$channelID;;🎲 **|** Dice Candy - PERDEU!;;<:Claramoney:1133904408720191498> **|** O Dado chamou 80!
+🎉 **|** Infelizmente <@$authorID>, perdeu $splitText[2] Candys, boa sorte na próxima vez! ;#ff2424; ; ; ; ; ;https://media.discordapp.net/attachments/1142888335908536380/1143513715153580133/20230822_085439_0000.png]]
+
+$endasync 
+$endif 
+
+
+$endif 
