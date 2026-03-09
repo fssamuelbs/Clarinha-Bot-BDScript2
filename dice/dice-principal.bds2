@@ -1,0 +1,37 @@
+$nomention 
+$onlyIf[$guildID!=;]
+$reply 
+
+$suppressErrors[Qual parte você não entendeu? Não coloque pontos e letras na quantia!]
+
+$setVar[comandosusados;$sum[$getVar[comandosusados];1]]
+$onlyIf[$getVar[Registrado;$authorID]>1;<:fx_uncertification:1123653285451153508> **|** Você deve se registrar em meu sistema antes de usar meus comandos, use ``/registrar``]
+
+$var[mds;$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$message;kk;000000;1];k;000;1];m;000000;1];b;000000000;1];all;$getVar[CandyMoneyPrincipal;$authorID];1];t;000000000000;1]]
+
+$onlyIf[$isNumber[$var[mds]]==true;<:fx_uncertification:1123653285451153508> **|** Digite apenas números na quantia, exemplo:`` /dice quantia``]
+
+$onlyIf[$checkContains[$toLowercase[$var[mds]];inf;infinity;nan;-;.;,;%;∞;\;$;_]==false;<:fx_uncertification:1123653285451153508> **|** Não utilize caracteres especiais!]
+
+$onlyIf[$var[mds]>=100;<:fx_uncertification:1123653285451153508> **|** Você só pode apostar mais de 100 Candys em cada rodada.]
+$onlyIf[$var[mds]<=25000;<:fx_uncertification:1123653285451153508> **|** Você só pode apostar no máximo 25.000 ``(25k)`` Candys em cada rodada.]
+
+$onlyIf[$var[mds]<=$getVar[CandyMoneyPrincipal;$authorID];<:fx_uncertification:1123653285451153508> **|** <@$authorID>, Você não tem essa quantia de Candys, use ``/candy-atm`` para consultá-lo.]
+
+$globalCooldown[30s;⏰️ **|** Retorne <t:$sum[$getTimestamp;$getCooldown[global]]:R> para usar o comando novamente.]
+$title[🎲 **|** Dice Candy]
+$description[🍿 **|** <@$authorID>, Você está prestes a apostar $var[mds] Candys no Dice! Para continuar você deve deve selecionar seu número da sorte!
+
+<:Claramoney:1133861437853405316> **|** Lucros:
+<:b_seta2:1142422592364499045> Números de 1 - 75: 2.0x
+<:b_seta2:1142422592364499045> Números de 1 - 50: 3.0x
+<:b_seta2:1142422592364499045> Números de 1 - 25: 4.0x
+$image[https://media.discordapp.net/attachments/1142879885338083328/1142880031819968583/20230820_090154_0000.png]
+]
+$color[#ff2424]
+
+$addButton[no;numetos175-$var[mds]-$authorID;2.0x;secondary;no;]
+$addButton[no;numetos150-$var[mds]-$authorID;3.0x;secondary;no;]
+$addButton[no;numetos125-$var[mds]-$authorID;4.0x;secondary;no;]
+
+
