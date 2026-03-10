@@ -1,0 +1,18 @@
+$nomention 
+$onlyIf[$guildID!=;]
+$setVar[comandosusados;$sum[$getVar[comandosusados];1]]
+$suppressErrors[<:fx_uncertification:1123653285451153508> **|** Eu não tenho todas as permissões para ser usada nesse servidor, entre em contato com a Administração para me conceder permissões.]
+
+$onlyIf[$getVar[Registrado;$authorID]>1;$getVar[registromsg]]
+$onlyIf[$getVar[FazendaComprada;$authorID]>1;<:fx_uncertification:1123653285451153508> **|** Você não tem uma Fazenda, use ``/fazenda-comprar``]
+
+$color[#81ff61]
+$reply 
+$globalCooldown[1h;⏰️ **|** Você fez uma plantação nos últimos 60 minutos, retorne em <t:$sum[$getTimestamp;$getCooldown[global]]:R>.]
+$title[<:planta:1081986531243327580> **|** Plantação feita com Sucesso]
+$description[ >>> 👨‍🌾 **|** <@$authorID>, Sua plantações foi bem sucedida e você plantou $random[3000;5000] Sementes, Agora use ``/fazenda-sementes`` para consultar suas sementes atuais.]
+$footer[$randomText[ 🍬 | Veja os mais ricos com o comando /candy_rank.; 🎉 | Participe dos Sorteios de Candys no meu Servidor /convite.; 🔎 | Precisa de ajuda? Digite /ajuda.; 🔧 | Fui desenvolvida por fssamuelbs!; 🍬 | Utilize o comando /daily.]]
+$thumbnail[https://i.postimg.cc/y6XpGLDc/Design-sem-nome-20231222-140338-0000.png]
+$setVar[Plantações;$sum[$getVar[Plantações;$authorID];$random[3000;5000]];$authorID]
+$setVar[cooldowndoplantarcomando;$sum[$getTimestamp;3600];$authorID] 
+$ignoreTriggerCase
