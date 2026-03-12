@@ -1,0 +1,46 @@
+$nomention 
+$cooldown[2m;]
+$if[$and[$textSplit[$customID;-]$splitText[1]==aliançapobre;$splitText[3]==$authorID]==true]
+$removeButtons
+
+$onlyIf[$getVar[CandyMoneyPrincipal;$authorID]>29999;<:fx_uncertification:1123653285451153508> **|** <@$authorID> Você não tem todas essas Candys, consulte seu saldo usando ``/candy atm``.]
+$onlyIf[$getVar[Alianca;$authorID]<2;<:fx_uncertification:1123653285451153508> **|** <@$authorID> Você já adquiriu uma **aliança**, para comprar outra você deve se casar, use ``/aliança casar``.]
+$onlyIf[$getVar[casado;$authorID]==Solteiro (a);<:fx_uncertification:1123653285451153508> **|** <@$authorID>, Você está casado, então não há necessidade de comprar uma aliança...]
+
+$title[<:Server_Verified:1123645662085533796> **|** Compra Realizada!]
+$description[💍 **|** Você pagou **30.000 Candys** em uma **aliança**, quem você irá pedir em casamento? ]
+$footer[💍 | Para se casar use "/aliança casar."]
+$color[#a114ff]
+$cooldown[30s;]
+$setVar[CandyMoneyPrincipal;$sub[$getVar[CandyMoneyPrincipal;$authorID];30000];$authorID]
+$setVar[Alianca;$sum[$getVar[Alianca;$authorID];2];$authorID]
+
+
+$endif 
+
+$if[$and[$textSplit[$customID;-]$splitText[1]==aliançarico;$splitText[3]==$authorID]==true]
+$removeButtons 
+$onlyIf[$getVar[booster;$authorID]>=1;]
+$onlyIf[$getVar[CandyMoneyPrincipal;$authorID]>9999;<:fx_uncertification:1123653285451153508> **|** Você não tem todas essas Candys, consulte seu saldo usando ``/candy atm``.]
+$onlyIf[$getVar[Alianca;$authorID]<2;<:fx_uncertification:1123653285451153508> **|** <@$authorID> Você já adquiriu uma **aliança**, para comprar outra você deve se casar, use ``/aliança casar``.]
+$onlyIf[$getVar[casado;$authorID]==Solteiro (a);<:fx_uncertification:1123653285451153508> **|** <@$authorID>, Você está casado, então não há necessidade de comprar uma aliança...]
+$title[<:Clarinhabooster:1135716074260791317> **|** Compra Realizada!]
+$description[💍 **|** Você pagou **10.000 Candys** em uma **aliança**, quem você irá pedir em casamento? ]
+$footer[💍 | Para se casar use "/aliança casar."]
+$color[#a114ff]
+$setVar[CandyMoneyPrincipal;$sub[$getVar[CandyMoneyPrincipal;$authorID];10000];$authorID]
+$setVar[Alianca;$sum[$getVar[Alianca;$authorID];2];$authorID]
+
+
+$endif 
+
+$if[$and[$textSplit[$customID;-]$splitText[1]==aliançacancelar;$splitText[3]==$authorID]==true]
+
+$removeButtons
+
+$title[ <:Server_Verified:1123645662085533796> **|** Cancelamento realizado]
+$description[<:zpontoamarelo:1123310998007324782> **|** <@$authorID>, você cancelou a transação com sucesso!]
+$footer[$randomText[ 🍬 | Veja os mais ricos com o comando /candy_rank.; 🎉 | Participe dos Sorteios de Candys no meu Servidor /convite; 🔎 | Precisa de ajuda? Digite /help; 🔧 | Fui desenvolvida por fssamuelbs!; 🍬 | Utilize o comando /daily e colete seu bônus diário.]]
+$color[#a114ff]
+
+$endif 
