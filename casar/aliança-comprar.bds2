@@ -1,0 +1,30 @@
+$nomention 
+$suppressErrors 
+$onlyIf[$guildID!=;]
+$setVar[comandosusados;$sum[$getVar[comandosusados];1]]
+
+$onlyIf[$getVar[Registrado;$authorID]>1;<:fx_uncertification:1123653285451153508> **|** Você deve se registrar em meu sistema antes de usar meus comandos, use ``/registrar``.]
+$onlyIf[$getVar[Alianca;$authorID]<2;<:fx_uncertification:1123653285451153508> **|** Você já adquiriu uma **aliança**, para comprar outra você deve se casar, use ``/aliança casar``.]
+$onlyIf[$getVar[casado;$authorID]==Solteiro (a);<:fx_uncertification:1123653285451153508> **|** <@$authorID>, Você está casado, então não há necessidade de comprar uma aliança...]
+$reply
+$title[💍 **|** Comprar Aliança]
+$description[<:Clarotaamor:1133904195485966347> **|** <@$authorID>, Você está prestes a comprar uma **aliança** no valor de **30.000 Candys**, para confirmar a operação clique abaixo.
+🌸 **|** *Mas o que posso fazer com uma aliança?* Com uma aliança você pode pedir sua ou seu Crush em casamento, e irá aparecer em seu ``/perfil`` o nome de usuário da pessoa, além de mostrar a quanto tempo vocês estão casados.]
+$addButton[no;aliançapobre-compraraliança-$authorID;Pagar (30000 Candys);secondary;no;<:Server_Verified:1123645662085533796>]
+$addButton[no;aliançarico-compraraliança-$authorID;Booster (10000 Candys);secondary;no;<:Clarinhabooster:1135716074260791317>]
+$addButton[no;aliançacancelar-compraraliança-$authorID;Cancelar;secondary;no;<:fx_uncertification:1123653285451153508>]
+$color[#c917ff]
+
+$channelSendMessage[1137142368139743382;
+**<:jslogo:1137073414184636548> | Comando usado via Slash**
+- **Autor:**
+`` $username ($authorID)``
+- **Comando:** 
+``/aliança comprar ``
+- **Servidor:** 
+``$serverName[$guildID] ($guildID)``
+- **Executado no Canal:** 
+``$channelName[$channelID] ($channelID) ``
+- **Horário:**
+<t:$getTimestamp:D>]
+$ignoreTriggerCase
