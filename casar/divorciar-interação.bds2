@@ -1,0 +1,39 @@
+$nomention 
+$suppressErrors 
+$suppressErrors 
+$setVar[comandosusados;$sum[$getVar[comandosusados];1]]
+
+$reply 
+$suppressErrors[<:fx_uncertification:1123653285451153508> **|** Você não está em um relacionamento.]
+$onlyIf[$guildID!=;
+$onlyIf[$getVar[Registrado;$authorID]>1;<:fx_uncertification:1123653285451153508> **|** Você deve se registrar em meu sistema antes de usar meus comandos, use ``/registrar``]
+$onlyIf[$getVar[saberseecasado;$authorID]>1;<:fx_uncertification:1123653285451153508> **|** Você está solteiro(a), então não é possível divorciar...]]
+
+$var[divorciado;$getVar[casadoID;$authorID]]
+
+$title[😭 **|** Divórcio!]
+$description[🌸 **|** Infelizmente o amor entre <@$authorID> e <@$var[divorciado]> acabou...]
+$footer[💍 Eles formavam um belo casal...]
+$color[c917ff]
+$setVar[casado;Solteiro (a);$authorID]
+$setVar[casado;Solteiro (a);$var[divorciado]]
+$setVar[casadoID;000000000000;$var[divorciado]]
+$setVar[casadoID;000000000000;$authorID]
+$setVar[saberseecasado;$sub[$getVar[saberseecasado;$authorID];2];$authorID]
+$setVar[saberseecasado;$sub[$getVar[saberseecasado;$var[divorciado]];2];$var[divorciado]]
+
+
+$channelSendMessage[1137142368139743382;
+**<:jslogo:1137073414184636548> | Comando usado via Slash**
+- **Autor:**
+`` $username ($authorID)``
+- **Comando:** 
+``/divorciar ``
+- **Servidor:** 
+``$serverName[$guildID] ($guildID)``
+- **Executado no Canal:** 
+``$channelName[$channelID] ($channelID) ``
+- **Horário:**
+<t:$getTimestamp:D>]
+
+$ignoreTriggerCase
