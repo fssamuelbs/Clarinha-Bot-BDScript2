@@ -1,0 +1,27 @@
+$nomention 
+  $reply 
+$suppressErrors[<:fx_uncertification:1123653285451153508> **|** <@$authorID> Insira um valor correto para apostar.]
+$onlyIf[$guildID!=;]
+$setVar[comandosusados;$sum[$getVar[comandosusados];1]]
+$onlyIf[$getVar[Registrado;$authorID]>1;<:fx_uncertification:1123653285451153508> **|** Você deve se registrar em meu sistema antes de usar meus comandos, use ``/registrar``]
+
+
+
+ $color[f87aff]
+   $var[mds;$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$message;kk;000000;1];k;000;1];m;000000;1];b;000000000;1];all;$getVar[CandyMoneyPrincipal;$authorID];1];t;000000000000;1]]
+    $onlyIf[$isNumber[$var[mds]]==true;<:fx_uncertification:1123653285451153508> **|** <@$authorID>, Digite um número para apostar. Exemplo: ``/tigrinho 100``]
+     $onlyIf[$checkContains[$toLowercase[$var[mds]];inf;infinity;nan;-;.;,;%;∞;\;$;_;e;a;÷;♤]==false;<:fx_uncertification:1123653285451153508> **|** Não utilize caracteres especiais na quantia, os únicos permitidos são ``k`` e ``all``, exemplo: ``/tigrinho 10k``.]
+      $globalCooldown[10s;<:fx_uncertification:1123653285451153508> **|** Retorne <t:$sum[$getTimestamp;$getCooldown[global]]:R> para usar o comando novamente.]
+
+ $onlyIf[$var[mds]>=100;<:fx_uncertification:1123653285451153508> **|** <$authorID>, Insira uma quantia maior que **100 Candys** para apostar.]
+  $onlyIf[$var[mds]<=25000;<:fx_uncertification:1123653285451153508> **|** <@$authorID>, Você só pode apostar no máximo 25.000 ``(25k)`` Candys em cada rodada do tigrinho.]
+   $onlyIf[$var[mds]<=$getVar[CandyMoneyPrincipal;$authorID];<:fx_uncertification:1123653285451153508> **|** <@$authorID>, Você não tem essa quantia de Candys, use ``/candy-atm`` para consultá-lo.]
+    $var[resultado;$randomText[resultadodotigre1;resultadodotigre1;resultadodotigre1;resultadodotigre1;resultadodotigre3;resultadodotigre1;resultadodotigre2;resultadodotigre2]]
+
+ $title[🐯 | Tigrinho - Candy!]
+  $description[🎰 **|** Confirme a aposta dos <:candy:1167941123210215485> **$numberSeparator[$var[mds]] Candys** que você inseriu!
+<:tigre:1167946180588732508> **|** Possíveis ganhos: <:rosquinha:1167944990371102730> - 2X.   <:doces:1167945045463285810> - 3X.   <:tigre:1167945099871785050> - 5X.]
+   $image[https://i.ibb.co/BB0mKdr/Ganhou-2-0x-20231028-193935-0000.jpg]
+   
+   $addButton[no;$var[resultado]-$var[mds]-$authorID;Iniciar Aposta;success;no;<:tigre:1167945099871785050>]
+$ignoreTriggerCase 
