@@ -1,0 +1,81 @@
+$if[$and[$textSplit[$customID;-]$splitText[1]==resultadodotigre3;$splitText[3]==$authorID]==true]
+ $onlyIf[$splitText[2]<=$getVar[CandyMoneyPrincipal;$authorID];<:fx_uncertification:1123653285451153508> **|** <@$authorID>, Você não tem essa quantia de Candys, use ``/candy-atm`` para consultá-lo.]
+  $suppressErrors 
+   $var[imgforderrota;$randomText[https://i.postimg.cc/Ls5RX2kj/3-20231028-230643-0000.jpg;https://i.postimg.cc/yNGK3tnt/4-20231028-230643-0001.jpg;https://i.postimg.cc/qRCTsw5R/5-20231028-230643-0002.jpg;https://i.postimg.cc/SR6b5sqb/6-20231028-230643-0003.jpg;https://i.postimg.cc/T1MXCbzc/7-20231028-230643-0004.jpg]]
+   $var[imggitoria;$randomText[https://i.postimg.cc/SKSn51v1/Ganhou-2-0x-20231029-152854-0000.jpg;https://i.postimg.cc/3NvNpskN/1.png]]
+   $var[cor;#f87aff]
+   $var[megasupergango;https://i.postimg.cc/Hk4J61B7/10-20231029-152411-0001.jpg]
+   $cooldown[7s;Aguarde alguns segundos para usar clicar no botão novamente!]
+   $removeButtons 
+
+$if[$randomText[3;3;3;1;3;1;3;2;3;3;3;3;3]==1]
+ $nomention 
+ $setVar[CandyMoneyPrincipal;$sub[$getVar[CandyMoneyPrincipal;$authorID];$splitText[2]];$authorID]
+  $title[🐯 | Tigrinho - Candy!]
+   $description[🎰 **|** <@$authorID>, Estou girando seus $numberSeparator[$splitText[2]] Candys, Boa Sorte!]
+    $image[https://i.postimg.cc/tTbdyFT7/Design-sem-nome-2.gif]
+     $color[$var[cor]] 
+      $addButton[no;button;Iniciar Aposta;secondary;yes;<:tigre:1167945099871785050>]
+       $deleteIn[5s]
+ $async[1]
+  $replyIn[5s]
+   $nomention
+
+   $sendEmbedMessage[$channelID;;🐯 | Tigrinho - Ganhou!;;🎉 **|** **MEGA GANHO!** Parabéns <@$authorID>, Você ganhou <:candy:1167941123210215485> $numberSeparator[$calculate[($splitText[2]*5)]](5X) Candys no Tigrinho!;$var[cor];;;;;;$var[imggitoria];;]
+   $setVar[CandyMoneyPrincipal;$sum[$getVar[CandyMoneyPrincipal;$authorID];$splitText[2]];$authorID]
+   $setVar[CandyMoneyPrincipal;$sum[$getVar[CandyMoneyPrincipal;$authorID];$splitText[2]];$authorID]
+   $setVar[CandyMoneyPrincipal;$sum[$getVar[CandyMoneyPrincipal;$authorID];$splitText[2]];$authorID]
+   $setVar[CandyMoneyPrincipal;$sum[$getVar[CandyMoneyPrincipal;$authorID];$splitText[2]];$authorID]
+   $setVar[CandyMoneyPrincipal;$sum[$getVar[CandyMoneyPrincipal;$authorID];$splitText[2]];$authorID]
+
+$endasync 
+
+$endif 
+
+$if[$randomText[3;3;3;1;3;1;3;2;3;3;3;3;3]==2]
+ $nomention 
+ $setVar[CandyMoneyPrincipal;$sub[$getVar[CandyMoneyPrincipal;$authorID];$splitText[2]];$authorID]
+  $title[🐯 | Tigrinho - Candy!]
+   $description[🎰 **|** <@$authorID>, Estou girando seus $numberSeparator[$splitText[2]] Candys, Boa Sorte!]
+    $image[https://i.postimg.cc/tTbdyFT7/Design-sem-nome-2.gif]
+     $color[$var[cor]] 
+      $addButton[no;button;Iniciar Aposta;secondary;yes;<:tigre:1167945099871785050>]
+       $deleteIn[5s]
+ $async[2]
+  $replyIn[5s]
+   $nomention
+
+   $sendEmbedMessage[$channelID;;🐯 | Tigrinho - Ganhou!;;🎉 **|** **MEGA GANHO!** Parabéns <@$authorID>, Você ganhou <:candy:1167941123210215485> $numberSeparator[$calculate[($splitText[2]*7)]](7X) Candys no Tigrinho!;$var[cor];;;;;;$var[megasupergango];;]
+   $setVar[CandyMoneyPrincipal;$sum[$getVar[CandyMoneyPrincipal;$authorID];$splitText[2]];$authorID]
+   $setVar[CandyMoneyPrincipal;$sum[$getVar[CandyMoneyPrincipal;$authorID];$splitText[2]];$authorID]
+   $setVar[CandyMoneyPrincipal;$sum[$getVar[CandyMoneyPrincipal;$authorID];$splitText[2]];$authorID]
+   $setVar[CandyMoneyPrincipal;$sum[$getVar[CandyMoneyPrincipal;$authorID];$splitText[2]];$authorID]
+   $setVar[CandyMoneyPrincipal;$sum[$getVar[CandyMoneyPrincipal;$authorID];$splitText[2]];$authorID]
+   $setVar[CandyMoneyPrincipal;$sum[$getVar[CandyMoneyPrincipal;$authorID];$splitText[2]];$authorID]
+   $setVar[CandyMoneyPrincipal;$sum[$getVar[CandyMoneyPrincipal;$authorID];$splitText[2]];$authorID]
+
+$endasync 
+
+$endif 
+
+$if[$randomText[3;3;3;1;3;1;3;2;3;3;3;3;3]==3]
+ $nomention 
+ $setVar[CandyMoneyPrincipal;$sub[$getVar[CandyMoneyPrincipal;$authorID];$splitText[2]];$authorID]
+  $title[🐯 | Tigrinho - Candy!]
+   $description[🎰 **|** <@$authorID>, Estou girando seus $numberSeparator[$splitText[2]] Candys, Boa Sorte!]
+    $image[https://i.postimg.cc/tTbdyFT7/Design-sem-nome-2.gif]
+     $color[$var[cor]] 
+      $addButton[no;button;Iniciar Aposta;secondary;yes;<:tigre:1167945099871785050>]
+       $deleteIn[5s]
+ $async[5]
+  $replyIn[5s]
+   $nomention
+
+   $sendEmbedMessage[$channelID;;🐯 | Tigrinho - Perdeu!;;🎰 **|** Não foi dessa vez <@$authorID>, Você perdeu <:candy:1167941123210215485> $numberSeparator[$calculate[($splitText[2]*1)]] Candys no Tigrinho!;$var[cor];;;;;;$var[imgforderrota];;]
+$endasync 
+$endif 
+
+$endif 
+
+
+
