@@ -1,0 +1,44 @@
+$nomention
+$reply 
+$suppressErrors 
+$var[mds;$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$message[quantia];kk;000000;1];k;000;1];m;000000;1];b;000000000;1];all;$getVar[CandyMoneyPrincipal;$authorID];1];t;000000000000;1]]
+    $onlyIf[$isNumber[$var[mds]]==true;<:fx_uncertification:1123653285451153508> **|** <@$authorID>, Digite um número para apostar. Exemplo: ``/apostar <@fssamuelbs> 100``]
+     $onlyIf[$checkContains[$toLowercase[$var[mds]];inf;infinity;nan;-;.;,;%;∞;\;$;_;e;a;÷;♤]==false;<:fx_uncertification:1123653285451153508> **|** Não utilize caracteres especiais na quantia, os únicos permitidos são ``k`` e ``all``, exemplo: ``/apostar @fssamuelbs 10k``.]
+      $globalCooldown[10s;<:fx_uncertification:1123653285451153508> **|** Retorne <t:$sum[$getTimestamp;$getCooldown[global]]:R> para usar o comando novamente.]
+      
+$var[user;$message[user]]
+
+$setVar[comandosusados;$sum[$getVar[comandosusados];1]]
+$suppressErrors[Qual parte você não entendeu? Não coloque pontos e letras na quantia!]
+$onlyIf[$getVar[Registrado;$authorID]>1;<:fx_uncertification:1123653285451153508> **|** Você deve se registrar em meu sistema antes de usar meus comandos, use ``/registrar``]
+$onlyIf[$var[user]!=;<:fx_uncertification:1123653285451153508> **|** Mencione alguém para apostar.]
+$onlyIf[$var[user]!=$authorID;<:fx_uncertification:1123653285451153508> **|** Você não pode apostar com você mesmo!]
+$onlyIf[$isBot[$var[user]]==false;<:fx_uncertification:1123653285451153508> **|** Você não pode apostar com um bot!]
+$onlyIf[$var[mds]!=;<:fx_uncertification:1123653285451153508> **|** Diga um valor de aposta, exemplo: ``cl.apostar @fssamuelbs 100``.]
+$onlyIf[$isNumber[$var[mds]]==true;<:fx_uncertification:1123653285451153508> **|** Digite apenas números na quantia.]
+$onlyIf[$var[mds]>=10;<:fx_uncertification:1123653285451153508> **|** Aposte um valor maior que 10 candys.]
+$onlyIf[$getVar[CandyMoneyPrincipal;$authorID]>=$var[mds];<:fx_uncertification:1123653285451153508> **|** Você não tem $var[mds] Candys.]
+$onlyIf[$getVar[CandyMoneyPrincipal;$var[user]]>=$var[mds];<:fx_uncertification:1123653285451153508> **|** <@$authorID>, <@$var[user]> não tem $var[mds] Candys para apostar.]
+$onlyIf[$var[mds]<=100000;<:fx_uncertification:1123653285451153508> **|** Você só pode apostar no máximo 100.000 ``(100k)`` Candys em cada rodada.]
+
+<@$var[user]>, <@$authorID>
+$title[🎉 | Solicitação de Aposta]
+$description[⭐️ **|** <@$var[user]>, <@$authorID> deseja fazer uma aposta com você valendo 🍬 $numberSeparator[$var[mds]] Candys, para aceitar clique no botão ``aceitar``.
+🛡 **|** Lembrando que após confirmar essa apostar não será possível reverter, e minha staff não irá reembolsar Candys, além de ambos terem 50% de chance de ganhar!
+🎊 **|** Se cair 🧁 <@$var[user]> leva a aposta, se cair 🌽 <@$authorID> vence! Lembre-se que eu 5% do lucro fica comigo, rsrs.]
+$color[#8C52FF]
+$addButton[no;aceitar-$var[user]-$var[mds]-$authorID;Aceitar;secondary;no;<:Server_Verified:1123645662085533796>]
+
+
+$channelSendMessage[1137142368139743382;
+**<:jslogo:1137073414184636548> | Comando usado via Slash**
+- **Autor:**
+`` $username ($authorID)``
+- **Comando:** 
+``/apostar``
+- **Servidor:** 
+``$serverName[$guildID] ($guildID)``
+- **Executado no Canal:** 
+``$channelName[$channelID] ($channelID) ``
+- **Horário:**
+<t:$getTimestamp:D>]
