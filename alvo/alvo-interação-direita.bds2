@@ -1,0 +1,53 @@
+$suppressErrors 
+  $if[$and[$textSplit[$customID;-]$splitText[1]==Canto2;$splitText[3]==$authorID]==true]
+   $onlyIf[$splitText[2]<=$getVar[CandyMoneyPrincipal;$authorID];<:fx_uncertification:1123653285451153508> **|** <@$authorID>, Você não tem essa quantia de Candys, use ``/candy-atm`` para consultá-lo.]
+  
+   $nomention 
+   $var[cor;#f87aff]
+   $cooldown[7s;Aguarde alguns segundos para usar clicar no botão novamente!]
+   $var[doce;$splitText[2]]
+   $removeButtons
+   
+$if[$randomText[2;1;3;4]==2]
+ $title[🏹 | Flexa <:clarinhavs:1175529637590356008> Alvo - Perdeu!]
+  $description[🎯 **|** Não foi dessa vez, <@$authorID>... Infelizmente você perdeu $numberSeparator[$var[doce]] Candys.]
+   $image[https://i.postimg.cc/y6wdhq8f/20231112-205242-0010.png]
+     $setVar[CandyMoneyPrincipal;$sub[$getVar[CandyMoneyPrincipal;$authorID];$var[doce]];$authorID]
+      $color[#68706e]
+$endif 
+
+$if[$randomText[2;1;3;4]==1]
+ $title[🏹 | Flexa <:clarinhavs:1175529637590356008> Alvo - Ganhou!]
+  $description[🎯 **|** Agora sim, <@$authorID>! Parabéns, você ganhou $numberSeparator[$calculate[($var[doce]*2)]] Candys!]
+   $image[https://i.postimg.cc/MGWJ05B3/20231112-205242-0008.png]
+    $color[#68706e]
+    $c[adição dos Candys]
+    $setVar[CandyMoneyPrincipal;$sum[$getVar[CandyMoneyPrincipal;$authorID];$var[doce]];$authorID]
+    
+$endif
+
+$if[$randomText[2;1;3;4]==3]
+ $title[🏹 | Flexa <:clarinhavs:1175529637590356008> Alvo - Ganhou!]
+  $description[🎯 **|** Agora sim, <@$authorID>! Parabéns, você ganhou $numberSeparator[$calculate[($var[doce]*3)]] Candys!]
+   $image[https://i.postimg.cc/J4ZhPTyR/20231112-205242-0009.png]
+    $color[#68706e]
+    $c[adição dos Candys]
+    $setVar[CandyMoneyPrincipal;$sum[$getVar[CandyMoneyPrincipal;$authorID];$var[doce]];$authorID]
+    $setVar[CandyMoneyPrincipal;$sum[$getVar[CandyMoneyPrincipal;$authorID];$var[doce]];$authorID]
+    
+$endif 
+
+$if[$randomText[2;1;3;4]==4]
+ $title[🏹 | Flexa <:clarinhavs:1175529637590356008> Alvo - Perdeu!]
+  $description[🎯 **|** Não foi dessa vez, <@$authorID>... Havia um escudo lá e você perdeu $numberSeparator[$var[doce]] Candys.]
+   $image[https://i.postimg.cc/nLY7gFCc/20231119-135305-0000.jpg]
+    $color[#68706e]
+     $setVar[CandyMoneyPrincipal;$sub[$getVar[CandyMoneyPrincipal;$authorID];$var[doce]];$authorID]
+  
+$endif 
+
+   $addButton[no;button;Esquerda;secondary;yes;]
+   $addButton[no;button1;Meio;secondary;yes;]
+   $addButton[no;button2;Direita;secondary;yes;]
+
+$endif 
