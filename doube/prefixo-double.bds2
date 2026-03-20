@@ -1,0 +1,34 @@
+$nomention 
+$onlyIf[$guildID!=;]
+$setVar[comandosusados;$sum[$getVar[comandosusados];1]]
+$suppressErrors[Qual parte você não entendeu? Não coloque pontos e letras na quantia!]
+$reply 
+$onlyIf[$getVar[Registrado;$authorID]>1;<:fx_uncertification:1123653285451153508> **|** Você deve se registrar em meu sistema antes de usar meus comandos, use ``/registrar``]
+
+$var[mds;$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$message[1];kk;000000;1];k;000;1];m;000000;1];b;000000000;1];all;$getVar[CandyMoneyPrincipal;$authorID];1];t;000000000000;1]]
+
+$onlyIf[$isNumber[$var[mds]]==true;<:fx_uncertification:1123653285451153508> **|** Digite apenas números na quantia.]
+
+$onlyIf[$checkContains[$toLowercase[$var[mds]];inf;infinity;nan;-;.;,;%;∞;\;$;_]==false;<:fx_uncertification:1123653285451153508> **|** Não utilize caracteres especiais!]
+
+$onlyIf[$var[mds]>=100;<:fx_uncertification:1123653285451153508> **|** Você só pode apostar mais de 100 Candys em cada rodada.]
+$onlyIf[$var[mds]<=25000;<:fx_uncertification:1123653285451153508> **|** Você só pode apostar no máximo 25.000 ``(25k)`` Candys em cada rodada.]
+
+$onlyIf[$var[mds]<=$getVar[CandyMoneyPrincipal;$authorID];<:fx_uncertification:1123653285451153508> **|** <@$authorID>, Você não tem essa quantia de Candys, use ``/candy-atm`` para consultá-lo.]
+
+$globalCooldown[10s;⏰️ **|** Retorne <t:$sum[$getTimestamp;$getCooldown[global]]:R> para usar o comando novamente.]
+$title[🍬 **|** Double Candy]
+$description[🎉 **|** <@$authorID>, Você está prestes à apostar $var[mds] Candys no Double! Para continuar você deve escolher uma cor.
+
+<:Claramoney:1133861437853405316> **|** Lucros:
+- Branco: 4x
+- Preto: 2x
+- Vermelho: 2x]
+$footer[Após usar essa interação, os botões irão sumir!]
+$color[#ff2424]
+
+$addButton[no;corbranco-$var[mds]-$authorID;Branco;secondary;no;<:double:1133874193285513326>]
+$addButton[no;corpreto-$var[mds]-$authorID;Preto;secondary;no;<:doubleblack:1133874726893277315>]
+$addButton[no;corvermelho-$var[mds]-$authorID;Vermelho;secondary;no;<:doublevermelho:1133876168769146930>]
+
+$ignoreTriggerCase 
