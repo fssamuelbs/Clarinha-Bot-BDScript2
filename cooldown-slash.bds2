@@ -1,0 +1,81 @@
+$nomention 
+$reply
+$suppressErrors 
+
+$onlyIf[$getVar[Registrado;$authorID]>1;$getVar[registromsg]]
+$setVar[comandosusados;$sum[$getVar[comandosusados];1]]
+
+
+$if[$isSlash==true]
+
+$title[<a:amarelo_sino:1131310531614097418> **|** Seus Intervalos de Recargas]
+$description[
+$addField[<:daily:1131309805068357684> | Daily;$if[$getTimestamp<$getVar[comandodedailycooolwon;$authorID]]
+** Disponível **<t:$getVar[comandodedailycooolwon;$authorID]:R> $else
+** Pronto para uso!**<:Server_Verified:1123645662085533796>$endif]
+
+$addField[👷 **|** Trabalhar;$if[$getTimestamp<$getVar[comandodetrabalharcooldow;$authorID]]
+**Disponível** <t:$getVar[comandodetrabalharcooldow;$authorID]:R> $else
+**Pronto para uso!**<:Server_Verified:1123645662085533796>$endif]
+
+$addField[<:entregador:1131024536494682132> **|** Ifood Entregar;$if[$getTimestamp<$getVar[cooldowndoifoodparacomando;$authorID]]
+**Disponível **<t:$getVar[cooldowndoifoodparacomando;$authorID]:R> $else
+**Pronto para uso!**<:Server_Verified:1123645662085533796>$endif]
+
+$addField[<:roubo:1137010995982782604> **|** Crime;$if[$getTimestamp<$getVar[comandodedailypremiumon;$authorID]]
+**Disponível** <t:$getVar[comandodedailypremiumon;$authorID]:R> $else
+**Pronto para uso!**<:Server_Verified:1123645662085533796>$endif]
+
+$addField[<:Clarotaamor:1079146187162128598> **|** Top.gg - Vote;$if[$getTimestamp<$getVar[cd-vote;$authorID]]
+**Disponível** <t:$getVar[cd-vote;$authorID]:R> $else
+**Pronto para uso!**<:Server_Verified:1123645662085533796>$endif]
+
+$addField[<:planta:1081986531243327580> **|** Fazenda Plantar;$if[$getTimestamp<$getVar[cooldowndoplantarcomando;$authorID]]
+**Disponível** <t:$getVar[cooldowndoplantarcomando;$authorID]:R> $else
+**Pronto para uso!** <:Server_Verified:1123645662085533796>$endif]
+
+$addField[🏠 **|** Alugar Casa;$if[$getTimestamp<$getVar[cooldowndocomandosobrealugarcad;$authorID]]
+**Disponível** <t:$getVar[cooldowndocomandosobrealugarcad;$authorID]:R> $else
+**Pronto para uso!**<:Server_Verified:1123645662085533796>$endif]
+
+$addField[<:trator:1081986123120791604> **|** Trator Arar;$if[$getTimestamp<$getVar[tratorararcd;$authorID]]
+**Disponível** <t:$getVar[tratorararcd;$authorID]:R> $else
+**Pronto para uso!**<:Server_Verified:1123645662085533796>$endif]
+
+$addField[<:pc:1127662897036795944> **|** PC Programar;$if[$getTimestamp<$getVar[pcprogramarcooldow;$authorID]]
+**Disponível** <t:$getVar[pcprogramarcooldow;$authorID]:R> $else
+**Pronto para uso!**<:Server_Verified:1123645662085533796>$endif]
+
+$addField[🛒 **|** Supermercado Alimentos;$if[$getTimestamp<$getVar[supermercadoalimentoscd;$authorID]]
+**Disponível** <t:$getVar[supermercadoalimentoscd;$authorID]:R> $else
+**Pronto para uso!**<:Server_Verified:1123645662085533796>$endif]
+
+$addField[<:Clarinhabooster:1137396609357979648> **|** Daily Premium;$if[$getTimestamp<$getVar[comandodedailypremiumon220202;$authorID]]
+**Disponível** <t:$getVar[comandodedailypremiumon220202;$authorID]:R> $else
+**Pronto para uso!**<:Server_Verified:1123645662085533796>$endif]
+
+$addField[⭐️ **|** Coletar Premium;$if[$getTimestamp<$getVar[comandodecoletarpremi7mon220202;$authorID]]
+**Disponível** <t:$getVar[comandodecoletarpremi7mon220202;$authorID]:R> $else
+**Pronto para uso!**<:Server_Verified:1123645662085533796>$endif]
+
+
+]
+$color[#9d26ff]
+$thumbnail[https://i.postimg.cc/T1dTWykB/Design-sem-nome-20231222-084444-0000.png]
+$footer[$randomText[🍬 | Precisando de mais Candy? Use /daily; 🍬 | Use o comando /trabalhar; 🍬 | Use o comando /roleta e aposte sua Candys; 🔎 | Precisa de ajuda? Use /ajuda; 🛠 | Desenvolvida por fssamuelbs!; 🎊 | Sorteios exclusivos em meu servidor /convite; ✉️ | Entre em minha comunidade para reportar bugs /convite;✉️ | Me adicione com o comando /convite]]
+
+$endif
+
+
+$channelSendMessage[1137142368139743382;
+**<:jslogo:1137073414184636548> | Comando usado via Slash**
+- **Autor:**
+`` $username ($authorID)``
+- **Comando:** 
+``/cooldown lista ``
+- **Servidor:** 
+``$serverName[$guildID] ($guildID)``
+- **Executado no Canal:** 
+``$channelName[$channelID] ($channelID) ``
+- **Horário:**
+<t:$getTimestamp:D>]
