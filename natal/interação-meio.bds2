@@ -1,0 +1,53 @@
+$c[natal interação meio ]
+$if[$and[$textSplit[$customID;-]$splitText[1]==meionatal;$splitText[3]==$authorID]==true]
+$nomention 
+$reply 
+
+
+   $color[#d60b22]
+   $reply 
+   $var[valor;2000]
+   $var[ganhos;$random[5000;6000]]
+   $onlyIf[$var[valor]<=$getVar[CandyMoneyPrincipal;$authorID];🎁 **|** <@$authorID>, Você precisa ter pelo menos **🍬 2000 Candys** para procurar o Papai Noel, e você não tem isso! Use ``/candy-atm`` para consultar seu doces.]
+   $removeButtons
+
+$c[visual (início)]
+    $if[$randomText[1;2;3]==1]
+    
+        $title[🎅 | Caça ao Papai Noel - PERDEU!]
+             $description[🎁 **|** Não foi dessa vez, <@$authorID>! Você encontrou um biscoito no lugar do Papai Noel, boa sorte na próxima vez!]
+                 $image[https://i.postimg.cc/dVk1WsxZ/3.png]
+                     $footer[$randomText[🎄 | Feliz Natal!;🎄 | https://clarinha.fun;🎁 | Participe dos Sorteios de Natal! /convites;🎅 | Ho, Ho, Ho! ] ]
+                         $thumbnail[https://media.discordapp.net/attachments/1128889845134139404/1187421979079364730/20231221_004643_0000.png?ex=6596d3e5&is=65845ee5&hm=f5ae1392c2fba28101379c56f428080823d850dc11a79506c5339de42ef4a636&]
+                   $setVar[CandyMoneyPrincipal;$sub[$getVar[CandyMoneyPrincipal;$authorID];$var[valor]];$authorID]
+    $endif
+
+    $if[$randomText[1;2;3]==2]
+    
+        $title[🎅 | Caça ao Papai Noel - PERDEU!]
+             $description[🎁 **|** Não foi dessa vez, <@$authorID>! Você encontrou um Boneco de Neve no lugar do Papai Noel, boa sorte na próxima vez!]
+                 $image[https://i.postimg.cc/dtS3mk4K/2.png]
+                     $footer[$randomText[🎄 | Feliz Natal!;🎄 | https://clarinha.fun;🎁 | Participe dos Sorteios de Natal! /convites;🎅 | Ho, Ho, Ho! ] ]
+                         $thumbnail[https://media.discordapp.net/attachments/1128889845134139404/1187421979079364730/20231221_004643_0000.png?ex=6596d3e5&is=65845ee5&hm=f5ae1392c2fba28101379c56f428080823d850dc11a79506c5339de42ef4a636&]
+                   $setVar[CandyMoneyPrincipal;$sub[$getVar[CandyMoneyPrincipal;$authorID];$var[valor]];$authorID]
+    $endif
+
+    $if[$randomText[1;2;3]==3]
+    
+        $title[🎅 | Caça ao Papai Noel - GANHOU!]
+             $description[🎁 **|** HO, HO, HO! A sua sorte chegou, <@$authorID>! Você encontrou o Papai Noel e ganhou **🍬 $var[ganhos] Candys**, Parabéns!]
+                 $image[https://i.postimg.cc/jdjC7Q6X/1.png]
+                     $footer[$randomText[🎄 | Feliz Natal!;🎄 | https://clarinha.fun;🎁 | Participe dos Sorteios de Natal! /convites;🎅 | Ho, Ho, Ho! ] ]
+                         $thumbnail[https://media.discordapp.net/attachments/1128889845134139404/1187421979079364730/20231221_004643_0000.png?ex=6596d3e5&is=65845ee5&hm=f5ae1392c2fba28101379c56f428080823d850dc11a79506c5339de42ef4a636&]
+                   $setVar[CandyMoneyPrincipal;$sum[$getVar[CandyMoneyPrincipal;$authorID];$var[ganhos]];$authorID]
+                
+    $endif
+$c[visual (final)]
+
+$c[logs inicio]
+   
+   
+
+$c[logs fim]
+    
+$endif
