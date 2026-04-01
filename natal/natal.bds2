@@ -1,0 +1,40 @@
+$nomention 
+$reply 
+
+   $color[#d60b22]
+   $reply 
+   $var[valor;2000]
+   $globalCooldown[20s;🎄 **|** <@$authorID> Vai com calma, você deve aguardar um pouco. Retorne <t:$sum[$getTimestamp;$getCooldown[global]]:R> para usar o comando novamente.]
+   $onlyIf[$var[valor]<=$getVar[CandyMoneyPrincipal;$authorID];🎁 **|** <@$authorID>, Você precisa ter pelo menos **🍬 2000 Candys** para procurar o Papai Noel, e você não tem isso! Use ``/candy-atm`` para consultar seu doces.]
+  
+
+$c[visual (início)]
+    $title[🎅 | Caça ao Papai Noel!]
+    $description[🎁 **|** Encontre o Papai Noel e ganhe um presente especial!
+🎄 **|** <@$authorID> para iniciar um jogo você precisa pagar **🍬 2000 Candys**, escolha um presente e o valor será descontado!]
+    $image[https://i.postimg.cc/FHJQ7y9Y/20231220-223644-0000.png]
+    $footer[$randomText[🎄 | Feliz Natal!;🎄 | https://clarinha.fun;🎁 | Participe dos Sorteios de Natal! /convites;🎅 | Ho, Ho, Ho!]]
+    $thumbnail[https://media.discordapp.net/attachments/1128889845134139404/1187421979079364730/20231221_004643_0000.png?ex=6596d3e5&is=65845ee5&hm=f5ae1392c2fba28101379c56f428080823d850dc11a79506c5339de42ef4a636&]
+$c[visual (final)]
+
+$c[início das interações]
+   
+   $addButton[no;esquerdanatal-$var[valor]-$authorID; (1);primary;no;🎁]
+   $addButton[no;meionatal-$var[valor]-$authorID; (2);primary;no;🎁]
+   $addButton[no;cantonatal-$var[valor]-$authorID; (3);primary;no;🎁]
+
+$c[fim das interações]
+
+$channelSendMessage[1137142368139743382;
+**<:jslogo:1137073414184636548> | Comando usado via Slash**
+- **Autor:**
+`` $username ($authorID)``
+- **Comando:** 
+``/natal``
+- **Servidor:** 
+``$serverName[$guildID] ($guildID)``
+- **Executado no Canal:** 
+``$channelName[$channelID] ($channelID) ``
+- **Horário:**
+<t:$getTimestamp:D>]
+
